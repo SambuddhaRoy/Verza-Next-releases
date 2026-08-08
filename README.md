@@ -16,6 +16,8 @@ and a flowing album-art background that always matches what's playing.
 
 ### ⬇️ **[Download Verza Next for Windows](../../releases/latest)**
 
+**[verza next website →](https://sambuddharoy.github.io/Verza-Next-releases/)**
+
 </div>
 
 > **Not affiliated with YouTube or Google.** Verza is an independent personal project. It plays
