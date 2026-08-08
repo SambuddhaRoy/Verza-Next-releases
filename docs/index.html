@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verza Next — Free YouTube Music Desktop Player for Windows</title>
+<meta name="description" content="Verza Next is a free, ad-free YouTube Music player for Windows. Offline downloads, time-synced lyrics, a 10-band equalizer, crossfade and a liquid-glass interface. No ads, no tracking, no subscription.">
+<link rel="canonical" href="https://sambuddharoy.github.io/Verza-Next-releases/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#5a6ff0">
+
+<!-- Open Graph / social previews -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Verza Next">
+<meta property="og:title" content="Verza Next — Free YouTube Music Desktop Player for Windows">
+<meta property="og:description" content="A free, ad-free YouTube Music player for Windows: offline downloads, synced lyrics, a 10-band EQ and a liquid-glass interface.">
+<meta property="og:url" content="https://sambuddharoy.github.io/Verza-Next-releases/">
+<meta property="og:image" content="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-player.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Verza Next — Free YouTube Music Desktop Player for Windows">
+<meta name="twitter:description" content="Offline downloads, synced lyrics, a 10-band EQ and a liquid-glass interface. Free and ad-free.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-player.png">
+<link rel="icon" href="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/icon.png">
+
+<!-- Structured data: helps Google understand this is a free Windows app, and can earn a rich result. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Verza Next",
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "Music Player",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "A free, ad-free YouTube Music desktop player for Windows with offline downloads, time-synced lyrics, a 10-band equalizer and a liquid-glass interface.",
+  "url": "https://sambuddharoy.github.io/Verza-Next-releases/",
+  "downloadUrl": "https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest",
+  "softwareVersion": "1.4.1",
+  "author": { "@type": "Person", "name": "Sambuddha Roy", "url": "https://github.com/SambuddhaRoy" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "screenshot": "https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-player.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is Verza Next free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Verza Next is completely free, with no ads, no tracking and no subscription. It is a personal project shared for personal use." } },
+    { "@type": "Question", "name": "Do I need a YouTube account to use it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Search, full-length playback, radio, lyrics and offline downloads all work without signing in. Signing in only adds your personalised home feed and your YouTube Music library." } },
+    { "@type": "Question", "name": "Can I download music for offline listening?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can download a song, an album or a whole playlist to your computer, and downloaded tracks play with no internet connection." } },
+    { "@type": "Question", "name": "Does Verza Next work on Windows 11?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Verza Next supports Windows 10 and Windows 11 (64-bit), and uses native Windows 11 acrylic translucency." } },
+    { "@type": "Question", "name": "Why does Windows show a SmartScreen warning?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The installer is not code-signed, because a code-signing certificate costs hundreds of dollars per year. Windows shows this warning for any unrecognised installer. Choose More info, then Run anyway." } }
+  ]
+}
+</script>
+
+<style>
+  :root { --bg:#0a0e1f; --panel:#131a35; --ink:#eef1ff; --muted:#a5b0d8; --accent:#8ea8ff; --line:rgba(255,255,255,.09); }
+  * { box-sizing: border-box; }
+  body { margin:0; background:linear-gradient(180deg,#0d1430,#070a18 60%); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 22px; }
+  header { text-align:center; padding: 72px 0 40px; }
+  h1 { font-size: clamp(30px,5vw,46px); line-height:1.15; margin:.2em 0 .35em; letter-spacing:-.02em; }
+  .tagline { color:var(--muted); font-size: clamp(16px,2.2vw,19px); max-width:620px; margin:0 auto 28px; }
+  .logo { width:88px; height:88px; border-radius:22px; }
+  .cta { display:inline-block; background:linear-gradient(135deg,#5a6ff0,#8ea8ff); color:#fff; font-weight:700;
+         padding:15px 34px; border-radius:14px; text-decoration:none; font-size:17px; box-shadow:0 8px 30px rgba(90,111,240,.4); }
+  .cta:hover { filter:brightness(1.08); }
+  .sub { color:var(--muted); font-size:13px; margin-top:12px; }
+  section { padding: 34px 0; border-top:1px solid var(--line); }
+  h2 { font-size:24px; margin:0 0 16px; letter-spacing:-.01em; }
+  h3 { font-size:16px; margin:22px 0 6px; }
+  p, li { color:#d7ddf5; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; list-style:none; padding:0; margin:0; }
+  .grid li { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  .grid b { display:block; margin-bottom:4px; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+  .shots img { width:100%; border-radius:12px; border:1px solid var(--line); }
+  ol { padding-left:20px; }
+  details { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; }
+  footer { padding:40px 0 60px; color:var(--muted); font-size:13px; text-align:center; border-top:1px solid var(--line); }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img class="logo" src="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/icon.png" alt="Verza Next app icon" width="88" height="88">
+  <h1>A free YouTube Music player for Windows</h1>
+  <p class="tagline">Verza Next plays the full YouTube Music catalogue on your desktop — with offline downloads,
+  time-synced lyrics, a 10-band equalizer and a translucent liquid-glass interface. No ads, no tracking, no subscription.</p>
+  <a class="cta" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">Download for Windows</a>
+  <p class="sub">Free · Windows 10 &amp; 11 (64-bit) · Updates itself</p>
+</header>
+
+<section>
+  <h2>Screenshots</h2>
+  <div class="shots">
+    <img src="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-player.png" alt="Verza Next now playing screen with album art and a flowing cover-art background" loading="lazy">
+    <img src="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-home.png" alt="Verza Next home screen showing quick picks and recently played music" loading="lazy">
+  </div>
+</section>
+
+<section>
+  <h2>What Verza Next does</h2>
+  <ul class="grid">
+    <li><b>Offline downloads</b>Save a song, an album or an entire playlist to your PC and play it with no internet connection.</li>
+    <li><b>Time-synced lyrics</b>Karaoke-style lyrics that light up line by line, in time with the track.</li>
+    <li><b>10-band equalizer</b>Per-band gain with a bass shelf, plus crossfade, playback speed and output-device selection.</li>
+    <li><b>Discovery radio</b>A radio that stays in the genre you started from but only plays songs you have never heard.</li>
+    <li><b>Your Sound</b>Private listening insights — top artists, when you listen, and your comfort songs — computed on your device.</li>
+    <li><b>Import your library</b>Bring playlists over from Spotify, Apple Music, Deezer, TIDAL, Soundiiz or a JSON export.</li>
+    <li><b>Liquid-glass interface</b>Real Windows 11 acrylic, six accent palettes plus a cover-adaptive theme, light and dark.</li>
+    <li><b>Desktop-native</b>System tray, media keys, global hotkeys, launch at startup, sleep timer and notifications.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How to install Verza Next on Windows</h2>
+  <ol>
+    <li><a href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">Download the installer</a> (<code>VerzaNext_x.y.z_x64-setup.exe</code>).</li>
+    <li>Run it. Windows SmartScreen may warn you because the installer is not code-signed — choose <b>More info → Run anyway</b>.</li>
+    <li>Open Verza Next and either sign in for your library, or skip it — full-length playback works either way.</li>
+  </ol>
+  <p>Verza Next updates itself: it checks on launch and installs new versions on restart.</p>
+</section>
+
+<section>
+  <h2>Frequently asked questions</h2>
+  <details><summary>Is Verza Next free?</summary>
+    <p>Yes — completely free, with no ads, no tracking and no subscription. It is a personal project shared for personal use.</p></details>
+  <details><summary>Do I need a YouTube account?</summary>
+    <p>No. Search, full-length playback, radio, lyrics and downloads all work signed out. Signing in only adds your personalised home feed and your YouTube Music library.</p></details>
+  <details><summary>Can I download music for offline listening?</summary>
+    <p>Yes. Download a song, an album or a whole playlist, and it plays with no connection.</p></details>
+  <details><summary>Does it work on Windows 11?</summary>
+    <p>Yes — Windows 10 and 11 (64-bit), with native Windows 11 acrylic translucency.</p></details>
+  <details><summary>Why does Windows show a SmartScreen warning?</summary>
+    <p>The installer is not code-signed (certificates cost hundreds a year), so Windows warns about any unrecognised installer. Choose <b>More info → Run anyway</b>.</p></details>
+  <details><summary>Is there a macOS or Linux version?</summary>
+    <p>Not yet. Windows 10 and 11 today.</p></details>
+</section>
+
+<footer>
+  <p><a href="https://github.com/SambuddhaRoy/Verza-Next-releases">GitHub</a> ·
+     <a href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">Releases</a></p>
+  <p>Verza is an independent personal project and is <b>not affiliated with, endorsed by, or sponsored by YouTube or Google</b>.
+  It bundles no copyrighted media and stores nothing on any server of its own.</p>
+</footer>
+
+</div>
+</body>
+</html>
