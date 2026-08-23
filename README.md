@@ -18,6 +18,15 @@ and a flowing album-art background that always matches what's playing.
 
 **[verza next website →](https://sambuddharoy.github.io/Verza-Next-releases/)**
 
+---
+
+## Screenshots
+
+<div align="center">
+  <img src="https://github.com/SambuddhaRoy/Verza-Next-releases/assets/screenshots/screenshot-1.png" alt="Verza Next - Now Playing with synced lyrics" width="48%" />
+  <img src="https://github.com/SambuddhaRoy/Verza-Next-releases/assets/screenshots/screenshot-2.png" alt="Verza Next - Dark theme with album art background" width="48%" />
+</div>
+
 </div>
 
 > **Not affiliated with YouTube or Google.** Verza is an independent personal project. It plays
@@ -73,7 +82,7 @@ Verza Next **keeps itself up to date**: it checks on launch and installs on the 
 <summary><b>Is it safe? Why does Windows warn me?</b></summary>
 <br/>
 
-The app isn't code-signed (those certificates are expensive), so Windows SmartScreen shows a warning for any unrecognised installer. Choose **More info → Run anyway**. Verza talks to no server of its own — your library and settings stay on your PC.
+The app isn't code-signed (those certificates are expensive), so Windows SmartScreen shows a warning for any unrecognised installer. Choose **More info → Run anyway**. Verza talks to no server of its own.
 </details>
 
 <details>
