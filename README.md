@@ -23,8 +23,8 @@ and a flowing album-art background that always matches what's playing.
 ## Screenshots
 
 <div align="center">
-  <img src="https://github.com/SambuddhaRoy/Verza-Next-releases/assets/screenshots/screenshot-1.png" alt="Verza Next - Now Playing with synced lyrics" width="48%" />
-  <img src="https://github.com/SambuddhaRoy/Verza-Next-releases/assets/screenshots/screenshot-2.png" alt="Verza Next - Dark theme with album art background" width="48%" />
+  <img src="assets/Screenshot%202026-08-09%20010603.png" alt="Verza Next - Now Playing with synced lyrics" width="48%" />
+  <img src="assets/Screenshot%202026-08-09%20010641.png" alt="Verza Next - Dark theme with album art background" width="48%" />
 </div>
 
 </div>
