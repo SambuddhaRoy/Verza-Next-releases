@@ -3,159 +3,664 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Verza Next — Free YouTube Music Desktop Player for Windows</title>
-<meta name="description" content="Verza Next is a free, ad-free YouTube Music player for Windows. Offline downloads, time-synced lyrics, a 10-band equalizer, crossfade and a liquid-glass interface. No ads, no tracking, no subscription.">
+<title>Verza. A music player for your computer and your phone</title>
+<meta name="description" content="Verza plays YouTube Music without the ads on Windows, Linux and Android. It downloads in lossless, shows lyrics in time, and moves the song between your phone and your computer when you flick your wrist. Free.">
 <link rel="canonical" href="https://sambuddharoy.github.io/Verza-Next-releases/">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#5a6ff0">
-
-<!-- Open Graph / social previews -->
+<meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Verza Next">
-<meta property="og:title" content="Verza Next — Free YouTube Music Desktop Player for Windows">
-<meta property="og:description" content="A free, ad-free YouTube Music player for Windows: offline downloads, synced lyrics, a 10-band EQ and a liquid-glass interface.">
+<meta property="og:site_name" content="Verza">
+<meta property="og:title" content="Verza. A music player for your computer and your phone">
+<meta property="og:description" content="YouTube Music without the ads, downloads in lossless, and a flick of the wrist to move the song from phone to computer. Free, for Windows, Linux and Android.">
 <meta property="og:url" content="https://sambuddharoy.github.io/Verza-Next-releases/">
-<meta property="og:image" content="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-player.png">
+<meta property="og:image" content="https://sambuddharoy.github.io/Verza-Next-releases/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Verza Next — Free YouTube Music Desktop Player for Windows">
-<meta name="twitter:description" content="Offline downloads, synced lyrics, a 10-band EQ and a liquid-glass interface. Free and ad-free.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-player.png">
-<link rel="icon" href="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/icon.png">
-
-<!-- Structured data: helps Google understand this is a free Windows app, and can earn a rich result. -->
+<link rel="icon" href="assets/icon.png">
+<link rel="preload" href="assets/inter.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Verza Next",
-  "applicationCategory": "MultimediaApplication",
-  "applicationSubCategory": "Music Player",
-  "operatingSystem": "Windows 10, Windows 11",
-  "description": "A free, ad-free YouTube Music desktop player for Windows with offline downloads, time-synced lyrics, a 10-band equalizer and a liquid-glass interface.",
+[{
+  "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Verza Next",
+  "applicationCategory": "MultimediaApplication", "applicationSubCategory": "Music Player",
+  "operatingSystem": "Windows 10, Windows 11, Linux",
+  "description": "A free, ad-free YouTube Music player for Windows and Linux with lossless downloads, time-synced lyrics, an equaliser, and handover to and from the phone app.",
   "url": "https://sambuddharoy.github.io/Verza-Next-releases/",
   "downloadUrl": "https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest",
-  "softwareVersion": "1.4.1",
   "author": { "@type": "Person", "name": "Sambuddha Roy", "url": "https://github.com/SambuddhaRoy" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "screenshot": "https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-player.png"
-}
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}, {
+  "@context": "https://schema.org", "@type": "MobileApplication", "name": "Verza",
+  "applicationCategory": "MultimediaApplication", "applicationSubCategory": "Music Player",
+  "operatingSystem": "Android 8.0 or later",
+  "description": "A free, ad-free YouTube Music player for Android with lossless downloads, lyrics, Android Auto, and handover to and from the desktop app.",
+  "downloadUrl": "https://github.com/SambuddhaRoy/Verza/releases/latest",
+  "author": { "@type": "Person", "name": "Sambuddha Roy", "url": "https://github.com/SambuddhaRoy" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}]
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Is Verza Next free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Verza Next is completely free, with no ads, no tracking and no subscription. It is a personal project shared for personal use." } },
-    { "@type": "Question", "name": "Do I need a YouTube account to use it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Search, full-length playback, radio, lyrics and offline downloads all work without signing in. Signing in only adds your personalised home feed and your YouTube Music library." } },
-    { "@type": "Question", "name": "Can I download music for offline listening?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can download a song, an album or a whole playlist to your computer, and downloaded tracks play with no internet connection." } },
-    { "@type": "Question", "name": "Does Verza Next work on Windows 11?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Verza Next supports Windows 10 and Windows 11 (64-bit), and uses native Windows 11 acrylic translucency." } },
-    { "@type": "Question", "name": "Why does Windows show a SmartScreen warning?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The installer is not code-signed, because a code-signing certificate costs hundreds of dollars per year. Windows shows this warning for any unrecognised installer. Choose More info, then Run anyway." } }
-  ]
-}
+<script>
+  // Before the first paint, so the page never flashes the other theme.
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('verza-theme'); } catch (e) {}
+    if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    document.documentElement.classList.toggle('light', t === 'light');
+  })();
 </script>
-
 <style>
-  :root { --bg:#0a0e1f; --panel:#131a35; --ink:#eef1ff; --muted:#a5b0d8; --accent:#8ea8ff; --line:rgba(255,255,255,.09); }
-  * { box-sizing: border-box; }
-  body { margin:0; background:linear-gradient(180deg,#0d1430,#070a18 60%); color:var(--ink);
-         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 22px; }
-  header { text-align:center; padding: 72px 0 40px; }
-  h1 { font-size: clamp(30px,5vw,46px); line-height:1.15; margin:.2em 0 .35em; letter-spacing:-.02em; }
-  .tagline { color:var(--muted); font-size: clamp(16px,2.2vw,19px); max-width:620px; margin:0 auto 28px; }
-  .logo { width:88px; height:88px; border-radius:22px; }
-  .cta { display:inline-block; background:linear-gradient(135deg,#5a6ff0,#8ea8ff); color:#fff; font-weight:700;
-         padding:15px 34px; border-radius:14px; text-decoration:none; font-size:17px; box-shadow:0 8px 30px rgba(90,111,240,.4); }
-  .cta:hover { filter:brightness(1.08); }
-  .sub { color:var(--muted); font-size:13px; margin-top:12px; }
-  section { padding: 34px 0; border-top:1px solid var(--line); }
-  h2 { font-size:24px; margin:0 0 16px; letter-spacing:-.01em; }
-  h3 { font-size:16px; margin:22px 0 6px; }
-  p, li { color:#d7ddf5; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; list-style:none; padding:0; margin:0; }
-  .grid li { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
-  .grid b { display:block; margin-bottom:4px; }
-  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
-  .shots img { width:100%; border-radius:12px; border:1px solid var(--line); }
-  ol { padding-left:20px; }
-  details { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin-bottom:10px; }
-  summary { cursor:pointer; font-weight:600; }
-  footer { padding:40px 0 60px; color:var(--muted); font-size:13px; text-align:center; border-top:1px solid var(--line); }
-  a { color:var(--accent); }
+/* Verza's website, in the apps' own design: a true black or white page, a name set very large and
+   light in lowercase, buttons that are just the word, one 12px corner, and one accent. In the apps the
+   accent comes from the cover of what's playing; here each section is a track with a colour of its
+   own, and the dock at the bottom plays the page. The numbers are style.css's in the Verza Next repo. */
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url('assets/inter.woff2') format('woff2');
+}
+@property --accent { syntax: '<color>'; inherits: true; initial-value: #ff2d9b; }
+
+:root {
+  --canvas: #000; --ink: #fff; --ink-2: #949494; --surface: #1f1f1f; --line: rgba(255, 255, 255, 0.14);
+  --accent: #ff2d9b; --on-accent: #000;
+  --r: 12px; --hit: 44px; --dock: 72px; --top: 56px;
+  --pad: clamp(20px, 5vw, 56px); --content: 1240px;
+  --gutter: max(var(--pad), calc((100vw - var(--content)) / 2));
+  --ease: cubic-bezier(0.2, 0, 0, 1); --spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  transition: --accent 0.6s var(--ease);
+  color-scheme: dark;
+}
+html.light {
+  --canvas: #fff; --ink: #000; --ink-2: #6b6b6b; --surface: #f4f4f4; --line: rgba(0, 0, 0, 0.12);
+  --accent: #d6006f; --on-accent: #fff;
+  color-scheme: light;
+}
+/* A track's colour, each checked at 4.5:1 or better against its canvas. */
+html[data-now="playing"] { --accent: #ff4d43; }  html.light[data-now="playing"] { --accent: #c9141c; }
+html[data-now="flick"]   { --accent: #ffb01f; }  html.light[data-now="flick"]   { --accent: #9a5a00; }
+html[data-now="lossless"]{ --accent: #4fb3ff; }  html.light[data-now="lossless"]{ --accent: #0a69b8; }
+html[data-now="home"]    { --accent: #3bd692; }  html.light[data-now="home"]    { --accent: #0a7a48; }
+html[data-now="phone"]   { --accent: #b59cff; }  html.light[data-now="phone"]   { --accent: #6a3fd9; }
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--top) + 16px); -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--canvas); color: var(--ink);
+  font: 400 17px/26px 'Inter', 'Segoe UI', system-ui, sans-serif; font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  padding-bottom: calc(var(--dock) + 24px);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+::selection { background: var(--accent); color: var(--on-accent); }
+html.light .d, html:not(.light) .l { display: none; }
+
+/* ── The top: places are words ──────────────────────────────── */
+.top {
+  position: sticky; top: 0; z-index: 20; height: var(--top); display: flex; align-items: center; gap: 24px;
+  padding: 0 var(--gutter); background: var(--canvas); transition: background 0.3s var(--ease);
+}
+.top-nav { display: flex; align-items: baseline; gap: 24px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
+.top-nav::-webkit-scrollbar { display: none; }
+.nav-item, .word {
+  font-weight: 300; letter-spacing: -0.02em; text-transform: lowercase; white-space: nowrap;
+  transition: color 0.2s var(--ease), transform 0.3s var(--spring), opacity 0.2s;
+}
+.nav-item { font-size: 26px; line-height: var(--hit); color: var(--ink-2); }
+.nav-item:hover { color: var(--ink); text-decoration: none; }
+.nav-item.active { color: var(--ink); }
+.nav-item:active, .word:active { transform: scale(0.96); }
+.word { display: inline-flex; align-items: center; min-height: var(--hit); font-size: 24px; line-height: 36px; color: var(--ink); }
+.word:hover { opacity: 0.7; text-decoration: none; }
+.word.accent { color: var(--accent); }
+.word.small { font-size: 17px; line-height: 28px; color: var(--ink-2); }
+.word.small:hover { color: var(--ink); opacity: 1; }
+.words { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 24px; }
+
+/* ── A track: a dateline, a very large name, then what it does ── */
+main > section { padding: 96px var(--gutter) 64px; }
+.dateline { font-size: 14px; line-height: 20px; color: var(--ink-2); text-transform: lowercase; }
+h1, h2 { font-weight: 200; text-transform: lowercase; letter-spacing: -0.05em; }
+h2 { font-size: clamp(52px, 10.5vw, 148px); line-height: 0.92; margin: 4px 0 56px -0.05em; text-wrap: balance; }
+h3 { font-size: 27px; line-height: 33px; font-weight: 300; letter-spacing: -0.02em; text-transform: lowercase; margin-bottom: 8px; }
+p { max-width: 34em; }
+p + p { margin-top: 16px; }
+.quiet { color: var(--ink-2); }
+.note { font-size: 14px; line-height: 20px; color: var(--ink-2); max-width: 44em; }
+b { font-weight: 500; }
+.shot { border-radius: var(--r); box-shadow: 0 0 0 1px var(--line); background: var(--surface); }
+figure figcaption { font-size: 14px; line-height: 20px; color: var(--ink-2); padding-top: 12px; max-width: 36em; }
+
+/* ── Intro ──────────────────────────────────────────────────── */
+#intro { padding-top: 40px; }
+.masthead { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 48px; align-items: end; }
+h1 { font-size: clamp(120px, 23vw, 330px); line-height: 0.8; margin: -0.1em 0 0 -0.07em; padding-bottom: 0.08em; }
+.pitch { padding-bottom: clamp(8px, 2.6vw, 44px); }
+.pitch p { font-size: 20px; line-height: 30px; }
+.pitch .words { padding: 20px 0 8px; }
+.stage { position: relative; margin-top: 56px; padding-bottom: 72px; }
+.stage .wide { width: min(100%, 1080px); }
+.stage .tall { position: absolute; right: 0; bottom: 0; width: clamp(120px, 21%, 250px); }
+
+/* ── Now Playing ────────────────────────────────────────────── */
+.split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 8fr); gap: 48px; align-items: start; }
+.split.flip { grid-template-columns: minmax(0, 8fr) minmax(0, 5fr); }
+.split .text { position: sticky; top: calc(var(--top) + 32px); }
+.pair { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: end; margin-top: 72px; }
+.pair figure:last-child { padding-bottom: 96px; }
+
+/* ── Flick ──────────────────────────────────────────────────── */
+.flick { touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+.flick:active { cursor: grabbing; }
+.flick svg { display: block; width: 100%; height: auto; overflow: visible; }
+.flick .f-line { fill: none; stroke: var(--ink); stroke-width: 2; opacity: 0.5; vector-effect: non-scaling-stroke; }
+.flick .f-phone { transform-box: fill-box; transform-origin: bottom center; }
+.flick .f-song { transition: transform 0.7s var(--spring); }
+.flick .f-cover { fill: var(--accent); }
+.flick .f-queue { fill: var(--ink-2); opacity: 0.6; }
+.flick .f-track { fill: var(--line); }
+.flick .f-fill { fill: var(--accent); }
+.flick .f-ring { fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; vector-effect: non-scaling-stroke; }
+.flick .f-from { font: 300 15px 'Inter', sans-serif; fill: var(--ink-2); letter-spacing: -0.01em; opacity: 0; transition: opacity 0.3s 0.45s; }
+/* The song sits in the phone until it's flicked over; .there is the computer's half. */
+.flick.there .f-song { transform: translate(322px, -314px) scale(1.7); }   /* origin 0 0: the song (centre 114, 255) lands at (516, 120), above the label */
+.flick.there .f-from.pc, .flick:not(.there).been .f-from.ph { opacity: 1; }
+.flick.go .f-phone { animation: f-tip 0.6s var(--ease); }
+.flick.go.there .f-ring.pc, .flick.go:not(.there) .f-ring.ph { animation: f-ring 0.9s 0.35s var(--ease); }
+.flick:not(.there).go .f-phone { animation-name: f-tip-back; }
+@keyframes f-tip { 30% { transform: rotate(14deg) translateY(-10px); } }
+@keyframes f-tip-back { 30% { transform: rotate(-10deg) translateY(8px); } }
+@keyframes f-ring { 0% { opacity: 0.9; transform: scale(0.6); } 100% { opacity: 0; transform: scale(2.4); } }
+.flick-words { padding-top: 8px; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; margin-top: 72px; max-width: 980px; }
+
+/* ── Lossless ───────────────────────────────────────────────── */
+.path { font-size: clamp(22px, 3.6vw, 50px); line-height: 1.16; font-weight: 200; letter-spacing: -0.03em; color: var(--ink-2); margin: 0 0 56px; max-width: none; overflow-wrap: anywhere; }
+.path b { font-weight: 200; color: var(--ink); }
+.path i { font-style: normal; color: var(--accent); }
+.bleed { margin-right: calc(-1 * var(--gutter)); }
+.bleed .shot { border-radius: var(--r) 0 0 var(--r); width: 100%; }
+
+/* ── Home ───────────────────────────────────────────────────── */
+.cols { columns: 2 320px; column-gap: 48px; margin-top: 56px; max-width: 980px; }
+.cols > div { break-inside: avoid; padding-bottom: 36px; }
+
+/* ── The phone ──────────────────────────────────────────────── */
+.phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 40px); align-items: start; }
+.phones figure:nth-child(2) { margin-top: 72px; }
+.phones figure:nth-child(3) { margin-top: 24px; }
+.phones .shot { border-radius: clamp(12px, 2.4vw, 28px); }
+
+/* ── The rest: a track list ─────────────────────────────────── */
+.tracks { list-style: none; margin: 0 -16px; counter-reset: n; }
+.tracks li {
+  counter-increment: n; display: grid; grid-template-columns: 40px minmax(0, 300px) minmax(0, 1fr) auto; gap: 0 20px; align-items: baseline;
+  padding: 12px 16px; border-radius: var(--r); transition: background 0.15s;
+}
+.tracks li:hover { background: var(--surface); }
+.tracks li::before { content: counter(n, decimal-leading-zero); font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tracks .name { font-size: 20px; line-height: 28px; font-weight: 300; letter-spacing: -0.01em; text-transform: lowercase; }
+.tracks .what { color: var(--ink-2); font-size: 15px; line-height: 22px; }
+.tracks .where { font-size: 14px; color: var(--ink-2); text-transform: lowercase; white-space: nowrap; }
+.tracks li:hover .where { color: var(--accent); }
+
+/* ── Get it ─────────────────────────────────────────────────── */
+.gets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 48px; max-width: 980px; }
+.gets .word { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.2; min-height: 52px; }
+.gets .ver { font-size: 14px; color: var(--ink-2); margin-left: 12px; font-variant-numeric: tabular-nums; }
+code { font: 14px/20px ui-monospace, 'Cascadia Mono', Consolas, monospace; color: var(--ink); }
+.warn { margin-top: 72px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; max-width: 980px; }
+footer { padding: 72px var(--gutter) 40px; }
+footer .words { padding-bottom: 16px; }
+
+/* ── The dock: the page, playing ────────────────────────────── */
+.dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; height: var(--dock);
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 16px;
+  padding: 0 var(--gutter); background: var(--canvas); transition: background 0.3s var(--ease);
+}
+.dock::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line); }
+.dock-fill { position: absolute; left: 0; top: -1px; height: 2px; width: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0); }
+.dock-song { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--ink); }
+.dock-song:hover { text-decoration: none; }
+.dock-cover {
+  width: 48px; height: 48px; flex: none; border-radius: 6px; background: var(--accent); color: var(--on-accent);
+  display: grid; place-items: center; font-size: 20px; font-weight: 300; letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+  transition: background 0.6s var(--ease);
+}
+.dock-title { font-size: 15px; line-height: 20px; text-transform: lowercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dock-by { font-size: 13px; line-height: 18px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dock-ctrl { display: flex; align-items: center; gap: 4px; }
+.dock-ctrl button { width: var(--hit); height: var(--hit); display: grid; place-items: center; border-radius: 50%; color: var(--ink); transition: background 0.2s, transform 0.3s var(--spring); }
+.dock-ctrl button:hover { background: var(--surface); }
+.dock-ctrl button:active { transform: scale(0.88); }
+.dock-ctrl svg { width: 22px; height: 22px; fill: currentColor; }
+.dock-ctrl #play svg { width: 34px; height: 34px; }
+.dock-ctrl #play { width: 52px; height: 52px; }
+html:not(.playing) .i-pause, html.playing .i-play { display: none; }
+.dock-end { display: flex; justify-content: flex-end; align-items: baseline; gap: 24px; }
+
+@media (max-width: 860px) {
+  main > section { padding-top: 72px; }
+  .masthead, .split, .split.flip, .pair, .facts, .gets, .warn { grid-template-columns: minmax(0, 1fr); }
+  h1 { font-size: 44vw; }
+  .pitch { padding-top: 16px; }
+  .split .text { position: static; }
+  .split.flip .text { order: -1; }
+  .pair { margin-top: 48px; }
+  .pair figure:last-child { padding-bottom: 0; }
+  .stage { padding-bottom: 40px; }
+  .stage .tall { width: 30%; }
+  .bleed { margin-right: 0; }
+  .bleed .shot { border-radius: var(--r); }
+  .tracks li { grid-template-columns: 32px minmax(0, 1fr) auto; }
+  .tracks .what { grid-column: 2 / -1; grid-row: 2; }
+  .dock { grid-template-columns: minmax(0, 1fr) auto; }
+  .dock-end, .dock-ctrl #prev { display: none; }
+  .nav-item { font-size: 22px; }
+  .top-nav { gap: 20px; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); padding-right: 32px; }
+  h2 { margin-bottom: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  #play { display: none !important; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<header>
-  <img class="logo" src="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/icon.png" alt="Verza Next app icon" width="88" height="88">
-  <h1>A free YouTube Music player for Windows</h1>
-  <p class="tagline">Verza Next plays the full YouTube Music catalogue on your desktop — with offline downloads,
-  time-synced lyrics, a 10-band equalizer and a translucent liquid-glass interface. No ads, no tracking, no subscription.</p>
-  <a class="cta" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">Download for Windows</a>
-  <p class="sub">Free · Windows 10 &amp; 11 (64-bit) · Updates itself</p>
+<header class="top">
+  <nav class="top-nav" aria-label="Sections">
+    <a class="nav-item active" href="#intro" data-for="intro">verza</a>
+    <a class="nav-item" href="#playing" data-for="playing">now playing</a>
+    <a class="nav-item" href="#flick" data-for="flick">flick</a>
+    <a class="nav-item" href="#lossless" data-for="lossless">lossless</a>
+    <a class="nav-item" href="#home" data-for="home">for you</a>
+    <a class="nav-item" href="#phone" data-for="phone">phone</a>
+    <a class="nav-item" href="#rest" data-for="rest">the rest</a>
+    <a class="nav-item" href="#get" data-for="get">get it</a>
+  </nav>
+  <button class="word small" id="theme" aria-label="Switch between dark and light">light</button>
 </header>
 
-<section>
-  <h2>Screenshots</h2>
-  <div class="shots">
-    <img src="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-player.png" alt="Verza Next now playing screen with album art and a flowing cover-art background" loading="lazy">
-    <img src="https://raw.githubusercontent.com/SambuddhaRoy/Verza-Desktop-releases/main/assets/shot-home.png" alt="Verza Next home screen showing quick picks and recently played music" loading="lazy">
+<main>
+
+<section id="intro" data-title="verza" data-by="a music player">
+  <div class="masthead">
+    <div>
+      <div class="dateline" id="dateline">tonight</div>
+      <h1>verza</h1>
+    </div>
+    <div class="pitch">
+      <p>A music player for your computer and your phone. It plays YouTube Music without the ads and downloads in lossless. Flick the phone at your screen and the song carries on from the computer.</p>
+      <div class="words">
+        <a class="word accent" href="#get">get it</a>
+        <a class="word" href="#playing">see it first</a>
+      </div>
+      <p class="note">Free. No ads, no Verza account, nothing tracked. Windows, Linux and Android.</p>
+    </div>
+  </div>
+  <div class="stage">
+    <img class="shot wide d" src="assets/next-player-dark.webp" width="2560" height="1600" alt="Verza Next's Now Playing screen: a red album cover with the song's spectrum drawn around it, over a slow red background made from the same cover">
+    <img class="shot wide l" src="assets/next-player-light.webp" width="2560" height="1600" alt="Verza Next's Now Playing screen in the light theme" loading="lazy">
+    <img class="shot tall d" src="assets/phone-nowplaying-dark.webp" width="1080" height="2400" alt="The same screen on the phone">
+    <img class="shot tall l" src="assets/phone-nowplaying-light.webp" width="1080" height="2400" alt="The same screen on the phone, light" loading="lazy">
   </div>
 </section>
 
-<section>
-  <h2>What Verza Next does</h2>
-  <ul class="grid">
-    <li><b>Offline downloads</b>Save a song, an album or an entire playlist to your PC and play it with no internet connection.</li>
-    <li><b>Time-synced lyrics</b>Karaoke-style lyrics that light up line by line, in time with the track.</li>
-    <li><b>10-band equalizer</b>Per-band gain with a bass shelf, plus crossfade, playback speed and output-device selection.</li>
-    <li><b>Discovery radio</b>A radio that stays in the genre you started from but only plays songs you have never heard.</li>
-    <li><b>Your Sound</b>Private listening insights — top artists, when you listen, and your comfort songs — computed on your device.</li>
-    <li><b>Import your library</b>Bring playlists over from Spotify, Apple Music, Deezer, TIDAL, Soundiiz or a JSON export.</li>
-    <li><b>Liquid-glass interface</b>Real Windows 11 acrylic, six accent palettes plus a cover-adaptive theme, light and dark.</li>
-    <li><b>Desktop-native</b>System tray, media keys, global hotkeys, launch at startup, sleep timer and notifications.</li>
-  </ul>
+<section id="playing" data-title="now playing" data-by="the cover picks the colour">
+  <div class="dateline">the cover picks the colour</div>
+  <h2>now playing</h2>
+  <div class="split">
+    <div class="text">
+      <p>Verza has one accent colour, and the record chooses it. When a song starts, the app takes the strongest hue on its cover and adjusts it until text in that colour reads at 4.5:1 against the page.</p>
+      <p>Behind the cover is the cover again, warped and blurred, and it moves with the bass. The bars around it are the spectrum of what you're hearing.</p>
+      <p class="quiet">This page does the same. Each section has a colour, and the bar at the bottom changes with it.</p>
+    </div>
+    <figure>
+      <img class="shot d" src="assets/next-lyrics-dark.webp" width="2560" height="1600" loading="lazy" alt="Lyrics in place of the cover, the line being sung in white and the rest dimmed">
+      <img class="shot l" src="assets/next-lyrics-light.webp" width="2560" height="1600" loading="lazy" alt="Lyrics in place of the cover, light theme">
+      <figcaption>Lyrics take the cover's place and keep time with the song. Click a line to jump to it.</figcaption>
+    </figure>
+  </div>
+  <div class="pair">
+    <figure>
+      <img class="shot d" src="assets/next-queue-dark.webp" width="2560" height="1600" loading="lazy" alt="The queue under Now Playing, eight songs with their covers and lengths">
+      <img class="shot l" src="assets/next-queue-light.webp" width="2560" height="1600" loading="lazy" alt="The queue under Now Playing, light theme">
+      <figcaption>The queue is under the fold, not in a panel. Drag a row to reorder it. When it runs out, radio continues from the last song.</figcaption>
+    </figure>
+    <figure>
+      <img class="shot d" src="assets/next-player-light.webp" width="2560" height="1600" loading="lazy" alt="Now Playing in the light theme, the cover washed pale behind it">
+      <img class="shot l" src="assets/next-player-dark.webp" width="2560" height="1600" loading="lazy" alt="Now Playing in the dark theme">
+      <figcaption>Black or white, nothing between. This is the other one.</figcaption>
+    </figure>
+  </div>
 </section>
 
-<section>
-  <h2>How to install Verza Next on Windows</h2>
-  <ol>
-    <li><a href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">Download the installer</a> (<code>VerzaNext_x.y.z_x64-setup.exe</code>).</li>
-    <li>Run it. Windows SmartScreen may warn you because the installer is not code-signed — choose <b>More info → Run anyway</b>.</li>
-    <li>Open Verza Next and either sign in for your library, or skip it — full-length playback works either way.</li>
+<section id="flick" data-title="flick it over" data-by="phone and computer">
+  <div class="dateline">phone and computer</div>
+  <h2>flick it over</h2>
+  <div class="split flip">
+    <div>
+      <div class="flick" id="flickScene" role="img" aria-label="A drawing of a phone and a computer. The song moves from one to the other.">
+        <svg viewBox="0 0 720 380" aria-hidden="true">
+          <rect class="f-line" x="330" y="16" width="372" height="236" rx="12"/>
+          <path class="f-line" d="M516 252 V300 M452 300 H580"/>
+          <rect class="f-line f-phone" x="56" y="150" width="116" height="216" rx="18"/>
+          <circle class="f-ring pc" cx="516" cy="128" r="50"/>
+          <circle class="f-ring ph" cx="114" cy="234" r="34"/>
+          <g class="f-song">
+            <rect class="f-queue" x="84" y="282" width="60" height="4" rx="2"/>
+            <rect class="f-queue" x="84" y="292" width="44" height="4" rx="2"/>
+            <rect class="f-queue" x="84" y="302" width="52" height="4" rx="2"/>
+            <rect class="f-track" x="84" y="270" width="60" height="3" rx="1.5"/>
+            <rect class="f-fill" x="84" y="270" width="26" height="3" rx="1.5"/>
+            <rect class="f-cover" x="84" y="204" width="60" height="60" rx="6"/>
+          </g>
+          <text class="f-from pc" x="516" y="238" text-anchor="middle">from your phone</text>
+          <text class="f-from ph" x="186" y="262">from your computer</text>
+        </svg>
+      </div>
+      <div class="words flick-words">
+        <button class="word accent" id="flickBtn">flick it over</button>
+        <span class="note">or drag across the drawing</span>
+      </div>
+    </div>
+    <div class="text">
+      <p>You're listening on the phone and you sit down at your desk. Flick the phone toward the screen. The computer takes the song at the second it had reached, and the phone goes quiet.</p>
+      <p>Flick it back toward yourself and the song returns to your pocket.</p>
+    </div>
+  </div>
+  <div class="facts">
+    <div>
+      <h3>the queue comes too</h3>
+      <p class="quiet">Up to 500 songs, counted from the one playing. If something was already playing where the song lands, the arrival wins. A setting makes it ask first.</p>
+    </div>
+    <div>
+      <h3>about 150 ms</h3>
+      <p class="quiet">A song nobody expected takes around ten seconds to start. So whatever your phone starts, the computer loads too, and a handover plays almost at once.</p>
+    </div>
+    <div>
+      <h3>verza connect</h3>
+      <p class="quiet">Pair once with a six-digit code. After that the phone shows what the computer is playing and can pause it, skip it, or hand it a queue.</p>
+    </div>
+    <div>
+      <h3>no server</h3>
+      <p class="quiet">The two talk to each other over your Wi-Fi and to nobody else. Windows asks about its firewall the first time you turn Connect on.</p>
+    </div>
+  </div>
+</section>
+
+<section id="lossless" data-title="the best copy there is" data-by="downloads">
+  <div class="dateline">downloads</div>
+  <h2>the best copy there is</h2>
+  <p class="path">Music / Coldplay / Parachutes / <b>Coldplay - Yellow<i>.flac</i></b></p>
+  <div class="split">
+    <div class="text">
+      <p>YouTube has no lossless audio, so Verza looks elsewhere. Turn on <b>Download in lossless</b> and a download becomes a FLAC from Soulseek, where people share their own rips. Verza makes the account for you.</p>
+      <p>On the computer the highest resolution wins, 24-bit ahead of CD. The phone prefers CD quality to save space. A file much smaller than the other copies of the same song is an MP3 dressed up as a FLAC, and Verza skips it.</p>
+      <p>Each file gets its tags and cover from MusicBrainz and lands in your Music folder by artist and album, where any other player can open it. A song nobody is sharing downloads from YouTube instead, about 4 MB.</p>
+      <p class="quiet">When a song you play is already on the disk, the file plays instead of the stream.</p>
+    </div>
+    <figure class="bleed">
+      <img class="shot d" src="assets/next-downloaded-dark.webp" width="2560" height="1600" loading="lazy" alt="Library, downloaded: albums in a grid, sorted A to Z">
+      <img class="shot l" src="assets/next-downloaded-light.webp" width="2560" height="1600" loading="lazy" alt="Library, downloaded, light theme">
+    </figure>
+  </div>
+</section>
+
+<section id="home" data-title="made from what you play" data-by="home and your sound">
+  <div class="dateline">home and your sound</div>
+  <h2>made from what you play</h2>
+  <figure>
+    <img class="shot d" src="assets/next-home-dark.webp" width="2560" height="1600" loading="lazy" alt="Home: recently played, then mixes made for you">
+    <img class="shot l" src="assets/next-home-light.webp" width="2560" height="1600" loading="lazy" alt="Home, light theme">
+  </figure>
+  <div class="cols">
+    <div>
+      <h3>home</h3>
+      <p class="quiet">Recently played, on repeat, favourites you'd forgotten, and mixes that start from an artist you've had on lately. Verza builds them on your own machine from your own plays. One mix follows the time of day.</p>
+    </div>
+    <div>
+      <h3>discovery radio</h3>
+      <p class="quiet">Radio that stays in the genre you started from and plays only songs you haven't heard. It remembers the last 5,000 it offered, so it doesn't loop back to the same forty.</p>
+    </div>
+    <div>
+      <h3>your sound</h3>
+      <p class="quiet">How much you listen, when, and to whom. It also names your genre, using MusicBrainz's curated genres, and builds a radio from it.</p>
+    </div>
+    <div>
+      <h3>your account, if you want</h3>
+      <p class="quiet">Sign in to YouTube Music and your likes, playlists and Home come along. A like in Verza is a like on your account. Skip the sign-in and the rest still works.</p>
+    </div>
+  </div>
+</section>
+
+<section id="phone" data-title="in your pocket" data-by="verza for android">
+  <div class="dateline">verza for android</div>
+  <h2>in your pocket</h2>
+  <div class="split">
+    <div class="text">
+      <p>The phone app came first, and the desktop copies its design. It has the same four words across the bottom, the same Now Playing, the same downloads into the same kind of folders.</p>
+      <p>It plays in Android Auto and from the lock screen. Five home-screen widgets and a quick-settings tile control it. Share a YouTube link to it from any app and it plays the song.</p>
+      <p>The spectrum around the cover is read from the player's own output, so Verza never asks for the microphone.</p>
+      <div class="words" style="padding-top:16px"><a class="word accent" href="#get">get it</a></div>
+    </div>
+    <div class="phones">
+      <figure>
+        <img class="shot d" src="assets/phone-home-dark.webp" width="1080" height="2400" loading="lazy" alt="The phone's home page">
+        <img class="shot l" src="assets/phone-home-light.webp" width="1080" height="2400" loading="lazy" alt="The phone's home page, light">
+      </figure>
+      <figure>
+        <img class="shot d" src="assets/phone-nowplaying-dark.webp" width="1080" height="2400" loading="lazy" alt="Now Playing on the phone">
+        <img class="shot l" src="assets/phone-nowplaying-light.webp" width="1080" height="2400" loading="lazy" alt="Now Playing on the phone, light">
+      </figure>
+      <figure>
+        <img class="shot d" src="assets/phone-lyrics-dark.webp" width="1080" height="2400" loading="lazy" alt="Lyrics on the phone">
+        <img class="shot l" src="assets/phone-lyrics-light.webp" width="1080" height="2400" loading="lazy" alt="Lyrics on the phone, light">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="rest" data-title="everything else" data-by="nineteen more">
+  <div class="dateline" id="restCount">also on the record</div>
+  <h2>everything else</h2>
+  <ol class="tracks">
+    <li><span class="name">equaliser</span><span class="what">Ten bands, presets and a bass control on the computer. The phone gets as many bands as it has, usually five, with the same presets.</span><span class="where">both</span></li>
+    <li><span class="name">fade between songs</span><span class="what">One song fades into the next, for as many seconds as you set.</span><span class="where">computer</span></li>
+    <li><span class="name">volume normalisation</span><span class="what">Every song at the same loudness, from the figure YouTube Music itself uses.</span><span class="where">computer</span></li>
+    <li><span class="name">output device</span><span class="what">Speakers, headphones or a DAC, chosen in Now Playing.</span><span class="where">computer</span></li>
+    <li><span class="name">sleep timer</span><span class="what">Stops after 15 minutes, an hour, or the end of the song, fading out if you like.</span><span class="where">both</span></li>
+    <li><span class="name">listen along</span><span class="what">A link that opens your queue, at your second, in a friend's Verza.</span><span class="where">both</span></li>
+    <li><span class="name">bring your playlists</span><span class="what">From a Spotify data export, or a JSON file from Apple Music, Deezer or TIDAL.</span><span class="where">computer</span></li>
+    <li><span class="name">listenbrainz</span><span class="what">Its weekly mixes on Home. Connect Spotify there and that listening counts too.</span><span class="where">both</span></li>
+    <li><span class="name">music you already have</span><span class="what">Files in your Music folder sit in the Library and play in the same queue.</span><span class="where">both</span></li>
+    <li><span class="name">lossless sources</span><span class="what">Point Verza at a FLAC server of your own and it streams from there when it can.</span><span class="where">both</span></li>
+    <li><span class="name">play a link</span><span class="what">Paste or share a YouTube link and the song plays.</span><span class="where">both</span></li>
+    <li><span class="name">media keys and hotkeys</span><span class="what">Keyboard media keys, Windows' media overlay, and shortcuts that work in the background.</span><span class="where">computer</span></li>
+    <li><span class="name">the tray</span><span class="what">Close the window and the music keeps going.</span><span class="where">computer</span></li>
+    <li><span class="name">android auto</span><span class="what">Your library and queue on the car's screen.</span><span class="where">phone</span></li>
+    <li><span class="name">widgets and a tile</span><span class="what">Five widgets for the home screen and a play button in quick settings.</span><span class="where">phone</span></li>
+    <li><span class="name">skip silence</span><span class="what">Dead air at the start and end of a song is cut.</span><span class="where">phone</span></li>
+    <li><span class="name">your library as a file</span><span class="what">Export playlists, likes and history, and import them elsewhere. The sign-in is never in the file.</span><span class="where">computer</span></li>
+    <li><span class="name">updates itself</span><span class="what">Both apps fetch their own new versions from GitHub.</span><span class="where">both</span></li>
+    <li><span class="name">light and dark</span><span class="what">True black or true white, following the system or not.</span><span class="where">both</span></li>
   </ol>
-  <p>Verza Next updates itself: it checks on launch and installs new versions on restart.</p>
 </section>
 
-<section>
-  <h2>Frequently asked questions</h2>
-  <details><summary>Is Verza Next free?</summary>
-    <p>Yes — completely free, with no ads, no tracking and no subscription. It is a personal project shared for personal use.</p></details>
-  <details><summary>Do I need a YouTube account?</summary>
-    <p>No. Search, full-length playback, radio, lyrics and downloads all work signed out. Signing in only adds your personalised home feed and your YouTube Music library.</p></details>
-  <details><summary>Can I download music for offline listening?</summary>
-    <p>Yes. Download a song, an album or a whole playlist, and it plays with no connection.</p></details>
-  <details><summary>Does it work on Windows 11?</summary>
-    <p>Yes — Windows 10 and 11 (64-bit), with native Windows 11 acrylic translucency.</p></details>
-  <details><summary>Why does Windows show a SmartScreen warning?</summary>
-    <p>The installer is not code-signed (certificates cost hundreds a year), so Windows warns about any unrecognised installer. Choose <b>More info → Run anyway</b>.</p></details>
-  <details><summary>Is there a macOS or Linux version?</summary>
-    <p>Not yet. Windows 10 and 11 today.</p></details>
+<section id="get" data-title="get it" data-by="free">
+  <div class="dateline">free</div>
+  <h2>get it</h2>
+  <div class="gets">
+    <div>
+      <h3>verza next <span class="ver" id="nextVer"></span></h3>
+      <p class="quiet">For the computer. Windows 10 and 11, and Linux.</p>
+      <div class="words" style="flex-direction:column;gap:0;padding-top:12px">
+        <a class="word accent" id="getWin" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">windows installer</a>
+        <a class="word" id="getDeb" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">linux .deb</a>
+        <a class="word" id="getAppImage" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">linux appimage</a>
+      </div>
+      <p class="note" style="padding-top:12px">Or <code>winget install SambuddhaRoy.VerzaNext</code></p>
+    </div>
+    <div>
+      <h3>verza <span class="ver" id="phoneVer"></span></h3>
+      <p class="quiet">For the phone. Android 8 or later.</p>
+      <div class="words" style="flex-direction:column;gap:0;padding-top:12px">
+        <a class="word accent" id="getApk" href="https://github.com/SambuddhaRoy/Verza/releases/latest">android apk</a>
+      </div>
+    </div>
+  </div>
+  <div class="warn">
+    <div>
+      <h3>windows will warn you</h3>
+      <p class="quiet">The installer isn't code-signed, because a certificate costs a few hundred dollars a year. SmartScreen says so for any installer it doesn't know. Choose <b>More info</b>, then <b>Run anyway</b>.</p>
+    </div>
+    <div>
+      <h3>so will android</h3>
+      <p class="quiet">Verza isn't on Google Play, so Play Protect hasn't seen the file before and offers to scan it. Let it, then install. You also allow your browser to install apps, once.</p>
+    </div>
+  </div>
 </section>
+
+</main>
 
 <footer>
-  <p><a href="https://github.com/SambuddhaRoy/Verza-Next-releases">GitHub</a> ·
-     <a href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">Releases</a></p>
-  <p>Verza is an independent personal project and is <b>not affiliated with, endorsed by, or sponsored by YouTube or Google</b>.
-  It bundles no copyrighted media and stores nothing on any server of its own.</p>
+  <div class="words">
+    <a class="word small" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases">verza next releases</a>
+    <a class="word small" href="https://github.com/SambuddhaRoy/Verza/releases">verza releases</a>
+    <a class="word small" href="https://github.com/SambuddhaRoy/Verza">phone source</a>
+    <a class="word small" href="https://github.com/SambuddhaRoy">sambuddha roy</a>
+  </div>
+  <p class="note">Verza is one person's project, for personal use. It is not affiliated with, endorsed by, or sponsored by YouTube or Google. It ships no music and has no server of its own. Album covers in the pictures belong to their owners.</p>
 </footer>
 
+<div class="dock" role="region" aria-label="This page, as a player">
+  <div class="dock-fill" id="fill"></div>
+  <a class="dock-song" id="dockSong" href="#intro">
+    <div class="dock-cover" id="dockNo" aria-hidden="true">01</div>
+    <div style="min-width:0">
+      <div class="dock-title" id="dockTitle">verza</div>
+      <div class="dock-by" id="dockBy">a music player</div>
+    </div>
+  </a>
+  <div class="dock-ctrl">
+    <button id="prev" aria-label="Previous section"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+    <button id="play" aria-label="Play the page"><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6zm8-14v14h4V5z"/></svg></button>
+    <button id="next" aria-label="Next section"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6zm10-12v12h2V6z"/></svg></button>
+  </div>
+  <div class="dock-end">
+    <a class="word accent" href="#get">get it</a>
+  </div>
 </div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var root = document.documentElement;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // The apps' dateline: "sunday night".
+  var now = new Date(), h = now.getHours();
+  $('dateline').textContent = now.toLocaleDateString('en', { weekday: 'long' }) + ' ' +
+    (h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 17 ? 'afternoon' : h >= 17 && h < 22 ? 'evening' : 'night');
+
+  // Black or white.
+  var themeBtn = $('theme');
+  function showTheme() { themeBtn.textContent = root.classList.contains('light') ? 'dark' : 'light'; }
+  themeBtn.onclick = function () {
+    var light = root.classList.toggle('light');
+    try { localStorage.setItem('verza-theme', light ? 'light' : 'dark'); } catch (e) {}
+    showTheme();
+  };
+  showTheme();
+
+  // Which track is on: the section under a line 40% down the window. It sets the accent (html[data-now]),
+  // the word lit in the top bar, and what the dock says.
+  var tracks = [].slice.call(document.querySelectorAll('main > section'));
+  var at = 0;
+  function show(i) {
+    at = i;
+    var s = tracks[i];
+    root.dataset.now = s.id;
+    $('dockNo').textContent = (i < 9 ? '0' : '') + (i + 1);
+    $('dockTitle').textContent = s.dataset.title;
+    $('dockBy').textContent = s.dataset.by;
+    $('dockSong').href = '#' + s.id;
+    document.querySelectorAll('.nav-item').forEach(function (a) {
+      var on = a.dataset.for === s.id;
+      a.classList.toggle('active', on);
+      if (on && a.scrollIntoView && a.parentNode.scrollWidth > a.parentNode.clientWidth) a.parentNode.scrollLeft = a.offsetLeft - a.parentNode.offsetLeft - 20;
+    });
+  }
+  function onScroll() {
+    var line = innerHeight * 0.4, i = 0;
+    for (var k = 0; k < tracks.length; k++) if (tracks[k].getBoundingClientRect().top <= line) i = k;
+    if (i !== at) show(i);
+    var max = root.scrollHeight - innerHeight;
+    $('fill').style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
+    if (max > 0 && scrollY >= max - 1) stop();
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+
+  // The dock plays the page: play scrolls it at a steady pace until you touch it.
+  var raf = 0, last = 0, pos = 0;
+  function step(t) {
+    if (last) { pos += (t - last) * 0.075; scrollTo(0, pos); }   // 75px a second
+    last = t; raf = requestAnimationFrame(step);
+  }
+  function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; last = 0; root.classList.remove('playing'); root.style.scrollBehavior = ''; $('play').setAttribute('aria-label', 'Play the page'); }
+  function play() {
+    if (scrollY >= root.scrollHeight - innerHeight - 1) scrollTo(0, 0);
+    pos = scrollY; root.style.scrollBehavior = 'auto'; root.classList.add('playing'); $('play').setAttribute('aria-label', 'Pause');
+    raf = requestAnimationFrame(step);
+  }
+  $('play').onclick = function () { raf ? stop() : play(); };
+  ['wheel', 'touchstart', 'keydown'].forEach(function (e) { addEventListener(e, function (ev) { if (raf && !(ev.target.closest && ev.target.closest('.dock'))) stop(); }, { passive: true }); });
+  function go(d) {
+    var was = !!raf; stop();
+    var i = Math.max(0, Math.min(tracks.length - 1, at + d));
+    tracks[i].scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+    if (was) setTimeout(function () { if (!raf) play(); }, 900);
+  }
+  $('prev').onclick = function () { go(tracks[at].getBoundingClientRect().top < -80 ? 0 : -1); };
+  $('next').onclick = function () { go(1); };
+  onScroll(); show(at);
+
+  // The flick: a press on the word, or a drag across the drawing in the direction the song should go.
+  var scene = $('flickScene'), flickBtn = $('flickBtn'), downX = null;
+  function flick(there) {
+    if (scene.classList.contains('there') === there) return;
+    scene.classList.remove('go'); void scene.offsetWidth;
+    scene.classList.toggle('there', there); scene.classList.add('go', 'been');
+    flickBtn.textContent = there ? 'flick it back' : 'flick it over';
+  }
+  flickBtn.onclick = function () { flick(!scene.classList.contains('there')); };
+  scene.addEventListener('pointerdown', function (e) { downX = e.clientX; });
+  addEventListener('pointerup', function (e) { if (downX !== null && Math.abs(e.clientX - downX) > 30) flick(e.clientX > downX); downX = null; });
+
+  // The newest versions and their files, straight from the releases. Without an answer the links
+  // still open the releases page.
+  function latest(repo, done) {
+    fetch('https://api.github.com/repos/SambuddhaRoy/' + repo + '/releases/latest').then(function (r) { return r.ok ? r.json() : null; }).then(function (rel) { if (rel) done(rel); }).catch(function () {});
+  }
+  function asset(rel, end, id) {
+    var a = (rel.assets || []).filter(function (x) { return x.name.slice(-end.length).toLowerCase() === end; })[0];
+    if (a) $(id).href = a.browser_download_url;
+  }
+  latest('Verza-Next-releases', function (rel) {
+    $('nextVer').textContent = rel.tag_name.replace(/^v/, '');
+    asset(rel, '-setup.exe', 'getWin'); asset(rel, '.deb', 'getDeb'); asset(rel, '.appimage', 'getAppImage');
+  });
+  latest('Verza', function (rel) {
+    $('phoneVer').textContent = rel.tag_name.replace(/^v/, '');
+    asset(rel, '.apk', 'getApk');
+  });
+})();
+</script>
 </body>
 </html>
