@@ -1,78 +1,66 @@
 <div align="center">
 
-# Verza&nbsp;Next
+# Verza
 
-### A translucent, liquid-glass music player for Windows
+### A music player for Windows and Linux
 
-Anonymous · audio-only · every animation hand-tuned.<br/>
-Instant-start playback, offline downloads, synced lyrics, a 10-band EQ,
-and a flowing album-art background that always matches what's playing.
+YouTube Music without the ads, downloads in lossless, lyrics in time,<br/>
+and one accent colour taken from the cover of whatever is playing.
 
 <p>
-  <a href="../../releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/SambuddhaRoy/Verza-Next-releases?style=for-the-badge&label=Download&color=5a6ff0&logo=windows&logoColor=white" /></a>
-  <img alt="Windows 10/11" src="https://img.shields.io/badge/Windows%2010%20·%2011-8ea8ff?style=for-the-badge&logo=windows&logoColor=white" />
-  <img alt="Free" src="https://img.shields.io/badge/Free%20·%20no%20ads%20·%20no%20tracking-6a7cf0?style=for-the-badge" />
+  <a href="../../releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/SambuddhaRoy/Verza-Next-releases?style=for-the-badge&label=Download&color=d6246e" /></a>
+  <img alt="Windows and Linux" src="https://img.shields.io/badge/Windows%20·%20Linux-333333?style=for-the-badge" />
+  <img alt="Free" src="https://img.shields.io/badge/Free%20·%20no%20ads%20·%20no%20tracking-333333?style=for-the-badge" />
 </p>
 
-### ⬇️ **[Download Verza Next for Windows](../../releases/latest)**
+### **[Download Verza](../../releases/latest)** · **[Website](https://sambuddharoy.github.io/Verza-Next-releases/)** · **[Verza for Android](https://github.com/SambuddhaRoy/Verza)**
 
-**[verza next website →](https://sambuddharoy.github.io/Verza-Next-releases/)**
+<br/>
 
----
+<img src="docs/assets/next-player-dark.webp" alt="Now Playing: a red album cover with the song's spectrum drawn around it, over a slow red background made from the same cover" width="100%" />
 
-## Screenshots
+<img src="docs/assets/next-home-dark.webp" alt="Home: recently played, then mixes made for you" width="49%" />
+<img src="docs/assets/next-link-light.webp" alt="A Spotify album opened in Verza, in the light theme" width="49%" />
 
-<div align="center">
-  <img src="assets/shot-player.png" alt="Verza Next playing twenty one pilots — album art centred on a flowing red background drawn from the cover" width="48%" />
-  <img src="assets/shot-player-alt.png" alt="Verza Next playing SZA — album art centred on a flowing blue background drawn from the cover" width="48%" />
+<img src="docs/assets/next-lyrics-dark.webp" alt="Lyrics in place of the cover, the line being sung in white" width="49%" />
+<img src="docs/assets/next-downloaded-light.webp" alt="Library, downloaded: albums in a grid, in the light theme" width="49%" />
+
 </div>
 
-</div>
-
-> **Not affiliated with YouTube or Google.** Verza is an independent personal project. It plays
-> publicly-available music through YouTube's own endpoints — it bundles no copyrighted media, ships no
-> API keys, and stores nothing on any server. For personal use.
+> **Not affiliated with YouTube or Google.** Verza is one person's project, for personal use. It plays
+> music through YouTube's own endpoints, bundles no music, ships no API keys, and has no server of its own.
 
 ---
 
-## Install in 3 steps
+## Install
 
-1. **Download** `VerzaNext_x.y.z_x64-setup.exe` from the **[latest release](../../releases/latest)**.
-2. **Run it.** Windows will likely warn you with a blue *"Windows protected your PC"* screen — this is
-   normal for apps that aren't code-signed by a big company (a certificate costs hundreds a year).
-   Click **More info → Run anyway**.
-3. **Open Verza Next.** Choose **Sign in** for your YouTube Music library, or **Skip** — full-length
-   playback works either way.
+**Windows 10 or 11 (64-bit).** Download `VerzaNext_x.y.z_x64-setup.exe` from the **[latest release](../../releases/latest)** and run it, or:
 
-Verza Next **keeps itself up to date**: it checks on launch and installs on the next restart.
+```
+winget install SambuddhaRoy.VerzaNext
+```
 
----
+Windows will probably show a blue *"Windows protected your PC"* screen, because the installer isn't code-signed. Choose **More info**, then **Run anyway**.
 
-## Your first minute
+**Linux.** The release has a `.deb` and an AppImage. Signing in needs Edge, Chrome, Chromium or Brave installed.
 
-- **Search** anything at the top → click a song to play, or an album/artist to open it.
-- Press **▶** — audio starts in well under a second and stays seekable while it loads.
-- Click the cover for **Now Playing**: synced karaoke lyrics, a live visualizer, and the flowing
-  cover-art background.
-- Hit **♥** to save a song. Playing one starts a **radio** that keeps going — or pick
-  **Discovery radio** for songs and artists you've never heard.
-- Right-click almost anything for actions: play next, add to queue, like, download, go to artist.
+Then open Verza and either **sign in** to YouTube Music, so your likes, playlists and Home come with you, or **skip** it. Everything except your account's library works without signing in.
+
+Verza updates itself: it checks when it starts and every few hours while it's open.
 
 ---
 
 ## What it does
 
-- ⚡ **Instant-start playback**, full-length, even signed out
-- ⬇️ **Offline downloads** — a song, an album, or a whole playlist; plays with no connection
-- 🎧 **Discovery radio** — genuinely new music every time, never the same rotation twice
-- 🎚️ **10-band EQ**, crossfade, playback speed, and output-device picking
-- 🎤 **Real time-synced lyrics** that light up in time with the track
-- 📊 **Your Sound** — your listening story (top artists, when you listen, comfort songs), computed on your device
-- 💜 **Your library** — liked songs, recents, and your own playlists
-- 📥 **Import** from **Spotify** or a playlist **JSON** (Apple Music, Deezer, TIDAL, Soundiiz…)
-- 🎨 **Liquid glass** — real Windows acrylic, six accent palettes plus **Adaptive** (colour from the cover), light & dark
-- 🖥️ **Desktop-native** — system tray, media keys, global hotkeys, launch at startup, notifications
-- 🌙 **Sleep timer**, **wind down**, **gentle start**, and **resume where you left off**
+- **Plays the whole YouTube Music catalogue**, full length, without ads, signed in or not.
+- **Opens Spotify and Apple Music links.** Paste a playlist, album or song and it opens as a playlist, with its cover. Like it and it stays in your Library.
+- **Downloads in lossless.** Turn it on and a download becomes a FLAC from Soulseek, the highest resolution on offer. Verza makes the account for you. Otherwise it saves M4A or MP3, filed by artist and album.
+- **Lyrics** that follow the song, line by line.
+- **Home made from what you play**: recently played, on repeat, forgotten favourites, and mixes built on your machine. **Discovery radio** finds artists you haven't heard.
+- **Your Sound** names your genre and plays it.
+- **Flick it over.** With Verza on your phone, flick toward your screen and the song carries on here, queue and all.
+- **The music you already have**: your Music folder sits in the Library and plays in the same queue.
+- A ten-band **equaliser**, fades between songs, volume normalisation, output device, sleep timer, media keys, the tray, and a light and a dark theme.
 
 ---
 
@@ -82,39 +70,39 @@ Verza Next **keeps itself up to date**: it checks on launch and installs on the 
 <summary><b>Is it safe? Why does Windows warn me?</b></summary>
 <br/>
 
-The app isn't code-signed (those certificates are expensive), so Windows SmartScreen shows a warning for any unrecognised installer. Choose **More info → Run anyway**. Verza talks to no server of its own.
+The installer isn't code-signed (the certificates cost hundreds a year), so SmartScreen warns about it. Choose **More info**, then **Run anyway**. Verza talks to no server of its own.
 </details>
 
 <details>
 <summary><b>Do I need a YouTube account?</b></summary>
 <br/>
 
-No. Playback, search, radio, lyrics and downloads all work signed out. Signing in only adds your personalised home feed and your YouTube Music library.
+No. Playback, search, radio, lyrics and downloads all work signed out. Signing in adds your YouTube Music library, and a like in Verza becomes a like on your account.
 </details>
 
 <details>
 <summary><b>Where is my data stored?</b></summary>
 <br/>
 
-In a folder on your PC (`%USERPROFILE%\.verza`) — library, settings, and downloads. If you sign in, the login is kept only on your machine and never appears in a backup or export.
+On your computer, in `~/.verza` (`%USERPROFILE%\.verza` on Windows). Downloads go to your Music folder. If you sign in, the login stays on your machine and is never in a backup or export.
 </details>
 
 <details>
-<summary><b>How do updates work?</b></summary>
+<summary><b>Why do the files and the winget package say "VerzaNext"?</b></summary>
 <br/>
 
-Automatically — Verza Next checks on launch, and you can also check any time from **Settings → Check for updates**. New versions install on restart, and a **What's new** card shows what changed.
+It was called Verza Next while it replaced the first desktop Verza. Renaming the installer and the package would break updates for everyone who already has it, so those keep the old name.
 </details>
 
 <details>
-<summary><b>Is there a Mac or Linux build?</b></summary>
+<summary><b>Is there a Mac build?</b></summary>
 <br/>
 
-Not yet — Windows 10/11 (64-bit) today.
+Not yet. Windows and Linux today.
 </details>
 
 ---
 
 <div align="center">
-<sub><b>Verza Next</b> — a personal project, shared for personal use. Not affiliated with YouTube or Google.</sub>
+<sub><b>Verza</b>, a personal project shared for personal use. Not affiliated with YouTube or Google.</sub>
 </div>

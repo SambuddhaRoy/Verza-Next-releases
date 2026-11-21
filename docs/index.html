@@ -19,7 +19,7 @@
 <link rel="preload" href="assets/inter.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 [{
-  "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Verza Next",
+  "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Verza",
   "applicationCategory": "MultimediaApplication", "applicationSubCategory": "Music Player",
   "operatingSystem": "Windows 10, Windows 11, Linux",
   "description": "A free, ad-free YouTube Music player for Windows and Linux with lossless downloads, time-synced lyrics, an equaliser, and handover to and from the phone app.",
@@ -50,7 +50,7 @@
 /* Verza's website, in the apps' own design: a true black or white page, a name set very large and
    light in lowercase, buttons that are just the word, one 12px corner, and one accent. In the apps the
    accent comes from the cover of what's playing; here each section is a track with a colour of its
-   own, and the dock at the bottom plays the page. The numbers are style.css's in the Verza Next repo. */
+   own, and the dock at the bottom plays the page. The numbers are style.css's in the Verza repo. */
 @font-face {
   font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap;
   src: url('assets/inter.woff2') format('woff2');
@@ -304,8 +304,8 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
     </div>
   </div>
   <div class="stage">
-    <img class="shot wide d" src="assets/next-player-dark.webp" width="2560" height="1600" alt="Verza Next's Now Playing screen: a red album cover with the song's spectrum drawn around it, over a slow red background made from the same cover">
-    <img class="shot wide l" src="assets/next-player-light.webp" width="2560" height="1600" alt="Verza Next's Now Playing screen in the light theme" loading="lazy">
+    <img class="shot wide d" src="assets/next-player-dark.webp" width="2560" height="1600" alt="Verza's Now Playing screen: a red album cover with the song's spectrum drawn around it, over a slow red background made from the same cover">
+    <img class="shot wide l" src="assets/next-player-light.webp" width="2560" height="1600" alt="Verza's Now Playing screen in the light theme" loading="lazy">
     <img class="shot tall d" src="assets/phone-nowplaying-dark.webp" width="1080" height="2400" alt="The same screen on the phone">
     <img class="shot tall l" src="assets/phone-nowplaying-light.webp" width="1080" height="2400" alt="The same screen on the phone, light" loading="lazy">
   </div>
@@ -466,7 +466,7 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
   </div>
 </section>
 
-<section id="rest" data-title="everything else" data-by="nineteen more">
+<section id="rest" data-title="everything else" data-by="twenty more">
   <div class="dateline" id="restCount">also on the record</div>
   <h2>everything else</h2>
   <ol class="tracks">
@@ -481,6 +481,7 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
     <li><span class="name">music you already have</span><span class="what">Files in your Music folder sit in the Library and play in the same queue.</span><span class="where">both</span></li>
     <li><span class="name">lossless sources</span><span class="what">Point Verza at a FLAC server of your own and it streams from there when it can.</span><span class="where">both</span></li>
     <li><span class="name">play a link</span><span class="what">Paste or share a YouTube link and the song plays.</span><span class="where">both</span></li>
+    <li><span class="name">open a spotify link</span><span class="what">Paste a Spotify or Apple Music playlist, album or song, and it opens here as a playlist, with its cover. Like it and it stays.</span><span class="where">computer</span></li>
     <li><span class="name">media keys and hotkeys</span><span class="what">Keyboard media keys, Windows' media overlay, and shortcuts that work in the background.</span><span class="where">computer</span></li>
     <li><span class="name">the tray</span><span class="what">Close the window and the music keeps going.</span><span class="where">computer</span></li>
     <li><span class="name">android auto</span><span class="what">Your library and queue on the car's screen.</span><span class="where">phone</span></li>
@@ -497,7 +498,7 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
   <h2>get it</h2>
   <div class="gets">
     <div>
-      <h3>verza next <span class="ver" id="nextVer"></span></h3>
+      <h3>for your computer <span class="ver" id="nextVer"></span></h3>
       <p class="quiet">For the computer. Windows 10 and 11, and Linux.</p>
       <div class="words" style="flex-direction:column;gap:0;padding-top:12px">
         <a class="word accent" id="getWin" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest">windows installer</a>
@@ -507,7 +508,7 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
       <p class="note" style="padding-top:12px">Or <code>winget install SambuddhaRoy.VerzaNext</code></p>
     </div>
     <div>
-      <h3>verza <span class="ver" id="phoneVer"></span></h3>
+      <h3>for your phone <span class="ver" id="phoneVer"></span></h3>
       <p class="quiet">For the phone. Android 8 or later.</p>
       <div class="words" style="flex-direction:column;gap:0;padding-top:12px">
         <a class="word accent" id="getApk" href="https://github.com/SambuddhaRoy/Verza/releases/latest">android apk</a>
@@ -530,8 +531,8 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
 
 <footer>
   <div class="words">
-    <a class="word small" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases">verza next releases</a>
-    <a class="word small" href="https://github.com/SambuddhaRoy/Verza/releases">verza releases</a>
+    <a class="word small" href="https://github.com/SambuddhaRoy/Verza-Next-releases/releases">computer releases</a>
+    <a class="word small" href="https://github.com/SambuddhaRoy/Verza/releases">phone releases</a>
     <a class="word small" href="https://github.com/SambuddhaRoy/Verza">phone source</a>
     <a class="word small" href="https://github.com/SambuddhaRoy">sambuddha roy</a>
   </div>
