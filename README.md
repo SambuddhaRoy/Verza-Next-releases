@@ -4,8 +4,8 @@
 
 ### A music player for Windows and Linux
 
-YouTube Music without the ads, downloads in lossless, lyrics in time,<br/>
-and one accent colour taken from the cover of whatever is playing.
+YouTube Music without the ads, covers that move in 3D,<br/>
+downloads in lossless, and lyrics in time.
 
 <p>
   <a href="../../releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/SambuddhaRoy/Verza-Next-releases?style=for-the-badge&label=Download&color=d6246e" /></a>
@@ -17,12 +17,12 @@ and one accent colour taken from the cover of whatever is playing.
 
 <br/>
 
-<img src="docs/assets/next-player-dark.webp" alt="Now Playing: a red album cover with the song's spectrum drawn around it, over a slow red background made from the same cover" width="100%" />
+<img src="docs/assets/next-player-dark.webp" alt="Now Playing: Flower Boy's cover in 3D, seen through a window in fluted glass over a slow orange background made from the same cover" width="100%" />
 
 <img src="docs/assets/next-home-dark.webp" alt="Home: recently played, then mixes made for you" width="49%" />
 <img src="docs/assets/next-link-light.webp" alt="A Spotify album opened in Verza, in the light theme" width="49%" />
 
-<img src="docs/assets/next-lyrics-dark.webp" alt="Lyrics in place of the cover, the line being sung in white" width="49%" />
+<img src="docs/assets/next-lyrics-dark.webp" alt="Lyrics in place of the cover, the line being sung in white, over a red background from Viva La Vida's cover" width="49%" />
 <img src="docs/assets/next-downloaded-light.webp" alt="Library, downloaded: albums in a grid, in the light theme" width="49%" />
 
 </div>
@@ -53,6 +53,7 @@ Verza updates itself: it checks when it starts and every few hours while it's op
 ## What it does
 
 - **Plays the whole YouTube Music catalogue**, full length, without ads, signed in or not.
+- **3D covers.** A cover with someone in front of a scene gets depth, worked out on your computer. Move the pointer over Now Playing and the scene slides behind them while they hold still. Windows only, for now.
 - **Opens Spotify and Apple Music links.** Paste a playlist, album or song and it opens as a playlist, with its cover. Like it and it stays in your Library.
 - **Downloads in lossless.** Turn it on and a download becomes a FLAC from Soulseek, the highest resolution on offer. Verza makes the account for you. Otherwise it saves M4A or MP3, filed by artist and album.
 - **Lyrics** that follow the song, line by line.
@@ -60,7 +61,7 @@ Verza updates itself: it checks when it starts and every few hours while it's op
 - **Your Sound** names your genre and plays it.
 - **Flick it over.** With Verza on your phone, flick toward your screen and the song carries on here, queue and all.
 - **The music you already have**: your Music folder sits in the Library and plays in the same queue.
-- A ten-band **equaliser**, fades between songs, volume normalisation, output device, sleep timer, media keys, the tray, and a light and a dark theme.
+- A ten-band **equaliser**, fades between songs, volume normalisation, output device, sleep timer, media keys, the tray, and two themes: pitch black, and stone.
 
 ---
 
