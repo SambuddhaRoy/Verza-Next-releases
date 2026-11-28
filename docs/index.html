@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Verza. A music player for your computer and your phone</title>
-<meta name="description" content="Verza plays YouTube Music without the ads on Windows, Linux and Android. Covers with someone in front of a scene move in 3D, it downloads in lossless, shows lyrics in time, and moves the song between your phone and your computer when you flick your wrist. Free.">
+<meta name="description" content="All of YouTube Music, no ads, on Windows, Linux and Android. 3D album covers, lossless downloads and lyrics in time. Free.">
 <link rel="canonical" href="https://sambuddharoy.github.io/Verza-Next-releases/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Verza">
 <meta property="og:title" content="Verza. A music player for your computer and your phone">
-<meta property="og:description" content="YouTube Music without the ads, covers that move in 3D, downloads in lossless, and a flick of the wrist to move the song from phone to computer. Free, for Windows, Linux and Android.">
+<meta property="og:description" content="All of YouTube Music, no ads. 3D covers, lossless downloads and lyrics in time. Free for Windows, Linux and Android.">
 <meta property="og:url" content="https://sambuddharoy.github.io/Verza-Next-releases/">
 <meta property="og:image" content="https://sambuddharoy.github.io/Verza-Next-releases/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
   "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Verza",
   "applicationCategory": "MultimediaApplication", "applicationSubCategory": "Music Player",
   "operatingSystem": "Windows 10, Windows 11, Linux",
-  "description": "A free, ad-free YouTube Music player for Windows and Linux with 3D covers, lossless downloads, time-synced lyrics, an equaliser, and handover to and from the phone app.",
+  "description": "A free YouTube Music player for Windows and Linux with no ads, 3D covers, lossless downloads and lyrics in time.",
   "url": "https://sambuddharoy.github.io/Verza-Next-releases/",
   "downloadUrl": "https://github.com/SambuddhaRoy/Verza-Next-releases/releases/latest",
   "author": { "@type": "Person", "name": "Sambuddha Roy", "url": "https://github.com/SambuddhaRoy" },
@@ -31,7 +31,7 @@
   "@context": "https://schema.org", "@type": "MobileApplication", "name": "Verza",
   "applicationCategory": "MultimediaApplication", "applicationSubCategory": "Music Player",
   "operatingSystem": "Android 8.0 or later",
-  "description": "A free, ad-free YouTube Music player for Android with 3D covers, lossless downloads, lyrics, Android Auto, and handover to and from the desktop app.",
+  "description": "A free YouTube Music player for Android with no ads, 3D covers, lossless downloads, lyrics and Android Auto.",
   "downloadUrl": "https://github.com/SambuddhaRoy/Verza/releases/latest",
   "author": { "@type": "Person", "name": "Sambuddha Roy", "url": "https://github.com/SambuddhaRoy" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -177,29 +177,6 @@ h1 { font-size: clamp(104px, 19vw, 272px); line-height: 0.84; letter-spacing: -0
 .pair figure:last-child { padding-bottom: 96px; }
 .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; margin-top: 72px; max-width: 980px; }
 
-/* ── Flick ──────────────────────────────────────────────────── */
-.flick { touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
-.flick:active { cursor: grabbing; }
-.flick svg { display: block; width: 100%; height: auto; overflow: visible; }
-.flick .f-line { fill: none; stroke: var(--ink); stroke-width: 2; opacity: 0.5; vector-effect: non-scaling-stroke; }
-.flick .f-phone { transform-box: fill-box; transform-origin: bottom center; }
-.flick .f-song { transition: transform 0.7s var(--spring); }
-.flick .f-cover { fill: var(--accent); }
-.flick .f-queue { fill: var(--ink-2); opacity: 0.6; }
-.flick .f-track { fill: var(--line); }
-.flick .f-fill { fill: var(--accent); }
-.flick .f-ring { fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; vector-effect: non-scaling-stroke; }
-.flick .f-from { font: 600 15px 'Inter', sans-serif; fill: var(--ink-2); letter-spacing: -0.01em; opacity: 0; transition: opacity 0.3s 0.45s; }
-/* The song sits in the phone until it's flicked over; .there is the computer's half. */
-.flick.there .f-song { transform: translate(322px, -314px) scale(1.7); }   /* origin 0 0: the song (centre 114, 255) lands at (516, 120), above the label */
-.flick.there .f-from.pc, .flick:not(.there).been .f-from.ph { opacity: 1; }
-.flick.go .f-phone { animation: f-tip 0.6s var(--ease); }
-.flick.go.there .f-ring.pc, .flick.go:not(.there) .f-ring.ph { animation: f-ring 0.9s 0.35s var(--ease); }
-.flick:not(.there).go .f-phone { animation-name: f-tip-back; }
-@keyframes f-tip { 30% { transform: rotate(14deg) translateY(-10px); } }
-@keyframes f-tip-back { 30% { transform: rotate(-10deg) translateY(8px); } }
-@keyframes f-ring { 0% { opacity: 0.9; transform: scale(0.6); } 100% { opacity: 0; transform: scale(2.4); } }
-.flick-words { padding-top: 12px; }
 
 /* ── Lossless ───────────────────────────────────────────────── */
 .path { font-size: clamp(22px, 3.4vw, 46px); line-height: 1.16; font-weight: 700; letter-spacing: -0.03em; color: var(--ink-2); margin: 0 0 56px; max-width: none; overflow-wrap: anywhere; }
@@ -322,12 +299,12 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
       <h1>Verza</h1>
     </div>
     <div class="pitch">
-      <p>A music player for your computer and your phone. It plays YouTube Music without the ads and downloads in lossless. Covers with someone in front of a scene move as you move the pointer or tilt the phone, and a flick of the phone at your screen carries the song across.</p>
+      <p>All of YouTube Music. No ads. On your computer and your phone.</p>
       <div class="words">
         <a class="word accent" href="#get">Get it</a>
         <a class="word" href="#depth">See it first</a>
       </div>
-      <p class="note">Free. No ads, no Verza account, nothing tracked. Windows, Linux and Android.</p>
+      <p class="note">Free. No sign-up, nothing tracked. Windows, Linux and Android.</p>
     </div>
   </div>
   <div class="stage">
@@ -343,45 +320,45 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
   <h2>3D covers</h2>
   <div class="split">
     <div class="text">
-      <p>Some covers are a photograph with someone standing in front of a scene. Verza works out how far away each part of the picture is, on your own machine, and gives the cover depth.</p>
-      <p>Move the pointer over Now Playing and the scene slides behind them while they hold still, the way it would through a window. On the phone, you tilt it. The cover sits in a clear window in the fluted glass, its colours running out into the background.</p>
-      <p class="quiet">Covers that are graphics, type or a flat picture stay as they are. The depth comes from Depth Anything V2, a 27 MB model that downloads once. Settings turns it off and deletes the model. On the computer it's Windows only for now.</p>
+      <p>Album covers with a person in front of a scene now move in 3D.</p>
+      <p>Move your pointer over Now Playing, or tilt your phone, and look around.</p>
+      <p class="quiet">Flat artwork stays flat. Turn it off anytime in Settings. On computers, Windows only for now.</p>
     </div>
     <figure>
       <video class="clip" autoplay muted loop playsinline poster="assets/depth-poster.webp" width="920" height="960" aria-label="Flower Boy's cover in Now Playing: as the pointer circles it, the sky, the clouds and the hills slide behind Tyler, who holds still">
         <source src="assets/depth.webm" type="video/webm">
         <source src="assets/depth.mp4" type="video/mp4">
       </video>
-      <figcaption>Recorded in the app: the pointer goes round the cover and the scene follows it.</figcaption>
+      <figcaption>Recorded in Verza.</figcaption>
     </figure>
   </div>
 </section>
 
-<section id="playing" data-title="Now Playing" data-by="The cover picks the colour">
-  <div class="dateline">The cover picks the colour</div>
+<section id="playing" data-title="Now Playing" data-by="Colour from the cover">
+  <div class="dateline">Colour from the cover</div>
   <h2>Now Playing</h2>
   <div class="split">
     <div class="text">
-      <p>Behind the cover is the cover again, blurred and slowly flowing, seen through fluted glass. The buttons over it are the same glass, clear and faintly ribbed, and the ribs come up when you press one.</p>
-      <p>Verza spends one colour, and the record chooses it. When a song starts, the app takes the strongest hue on its cover and adjusts it until it reads at 4.5:1 against the page. It goes in a few places only: the rim of the player at the bottom as the song plays, the song in the list, a switch that's on.</p>
-      <p class="quiet">This page does the same. Each section has a colour, and the dock at the bottom changes with it.</p>
+      <p>The album cover flows behind every song, seen through ribbed glass.</p>
+      <p>Each song picks its own accent colour from its cover.</p>
+      <p class="quiet">This page does it too. Scroll and watch the player at the bottom.</p>
     </div>
     <figure>
       <img class="shot d" src="assets/next-lyrics-dark.webp" width="2560" height="1600" loading="lazy" alt="Lyrics in place of the cover, the line being sung in white and the rest dimmed, over a red background from Viva La Vida's cover">
       <img class="shot l" src="assets/next-lyrics-light.webp" width="2560" height="1600" loading="lazy" alt="Lyrics in place of the cover, light theme">
-      <figcaption>Lyrics take the cover's place and keep time with the song. Click a line to jump to it.</figcaption>
+      <figcaption>Lyrics in time. Click a line to jump to it.</figcaption>
     </figure>
   </div>
   <div class="pair">
     <figure>
       <img class="shot d" src="assets/next-queue-dark.webp" width="2560" height="1600" loading="lazy" alt="The queue under Now Playing, songs with their covers and lengths">
       <img class="shot l" src="assets/next-queue-light.webp" width="2560" height="1600" loading="lazy" alt="The queue under Now Playing, light theme">
-      <figcaption>The queue is under the fold, not in a panel. Drag a row to reorder it. When it runs out, radio continues from the last song.</figcaption>
+      <figcaption>Drag songs to reorder your queue. When it ends, radio keeps going.</figcaption>
     </figure>
     <figure>
       <img class="shot d" src="assets/next-player-light.webp" width="2560" height="1600" loading="lazy" alt="Now Playing in the light theme, the cover washed pale behind it">
       <img class="shot l" src="assets/next-player-dark.webp" width="2560" height="1600" loading="lazy" alt="Now Playing in the dark theme">
-      <figcaption>Black at night, stone by day. This is the other one.</figcaption>
+      <figcaption>Black at night, stone by day.</figcaption>
     </figure>
   </div>
 </section>
@@ -390,66 +367,46 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
   <div class="dateline">Phone and computer</div>
   <h2>Flick it over</h2>
   <div class="split flip">
-    <div>
-      <div class="flick" id="flickScene" role="img" aria-label="A drawing of a phone and a computer. The song moves from one to the other.">
-        <svg viewBox="0 0 720 380" aria-hidden="true">
-          <rect class="f-line" x="330" y="16" width="372" height="236" rx="12"/>
-          <path class="f-line" d="M516 252 V300 M452 300 H580"/>
-          <rect class="f-line f-phone" x="56" y="150" width="116" height="216" rx="18"/>
-          <circle class="f-ring pc" cx="516" cy="128" r="50"/>
-          <circle class="f-ring ph" cx="114" cy="234" r="34"/>
-          <g class="f-song">
-            <rect class="f-queue" x="84" y="282" width="60" height="4" rx="2"/>
-            <rect class="f-queue" x="84" y="292" width="44" height="4" rx="2"/>
-            <rect class="f-queue" x="84" y="302" width="52" height="4" rx="2"/>
-            <rect class="f-track" x="84" y="270" width="60" height="3" rx="1.5"/>
-            <rect class="f-fill" x="84" y="270" width="26" height="3" rx="1.5"/>
-            <rect class="f-cover" x="84" y="204" width="60" height="60" rx="8"/>
-          </g>
-          <text class="f-from pc" x="516" y="238" text-anchor="middle">From your phone</text>
-          <text class="f-from ph" x="186" y="262">From your computer</text>
-        </svg>
-      </div>
-      <div class="words flick-words">
-        <button class="word accent" id="flickBtn">Flick it over</button>
-        <span class="note">or drag across the drawing</span>
-      </div>
-    </div>
+    <figure>
+      <img class="shot d" src="assets/next-flick-dark.webp" width="2560" height="1600" loading="lazy" alt="Verza on a computer catching a song flicked from a phone: the cover lands in Now Playing with From Pixel 8 under it">
+      <img class="shot l" src="assets/next-flick-light.webp" width="2560" height="1600" loading="lazy" alt="The same, in the light theme">
+      <figcaption>A song arriving from a phone.</figcaption>
+    </figure>
     <div class="text">
-      <p>You're listening on the phone and you sit down at your desk. Flick the phone toward the screen. The computer takes the song at the second it had reached, and the phone goes quiet.</p>
-      <p>Flick it back toward yourself and the song returns to your pocket.</p>
+      <p>Flick your phone toward your computer and the song moves there, right where you left off.</p>
+      <p>Flick it back to take the music with you.</p>
     </div>
   </div>
   <div class="facts">
     <div>
       <h3>The queue comes too</h3>
-      <p class="quiet">Up to 500 songs, counted from the one playing. If something was already playing where the song lands, the arrival wins. A setting makes it ask first.</p>
+      <p class="quiet">Up to 500 songs move with it.</p>
     </div>
     <div>
-      <h3>About 150 ms</h3>
-      <p class="quiet">A song nobody expected takes around ten seconds to start. So whatever your phone starts, the computer loads too, and a handover plays almost at once.</p>
+      <h3>Almost instant</h3>
+      <p class="quiet">The song starts on your computer in about 150 milliseconds.</p>
     </div>
     <div>
       <h3>Verza Connect</h3>
-      <p class="quiet">Pair once with a six-digit code. After that the phone shows what the computer is playing and can pause it, skip it, or hand it a queue. Your playlists and likes go both ways.</p>
+      <p class="quiet">Pair once with a six-digit code. Then control your computer from your phone, and keep playlists and likes in sync.</p>
     </div>
     <div>
-      <h3>No server</h3>
-      <p class="quiet">The two talk to each other over your Wi-Fi and to nobody else. Windows asks about its firewall the first time you turn Connect on.</p>
+      <h3>Stays on your Wi-Fi</h3>
+      <p class="quiet">Your phone and computer talk to each other directly. Nothing goes through a server.</p>
     </div>
   </div>
 </section>
 
-<section id="lossless" data-title="The best copy there is" data-by="Downloads">
+<section id="lossless" data-title="Lossless downloads" data-by="Downloads">
   <div class="dateline">Downloads</div>
-  <h2>The best copy there is</h2>
+  <h2>Lossless downloads</h2>
   <p class="path">Music / Coldplay / Parachutes / <b>Coldplay - Yellow<i>.flac</i></b></p>
   <div class="split">
     <div class="text">
-      <p>YouTube has no lossless audio, so Verza looks elsewhere. Turn on <b>Download in lossless</b> and a download becomes a FLAC from Soulseek, where people share their own rips. Verza makes the account for you.</p>
-      <p>On the computer the highest resolution wins, 24-bit ahead of CD. The phone prefers CD quality to save space. A file much smaller than the other copies of the same song is an MP3 dressed up as a FLAC, and Verza skips it.</p>
-      <p>Each file gets its tags and cover from MusicBrainz and lands in your Music folder by artist and album, where any other player can open it. A song nobody is sharing downloads from YouTube instead, about 4 MB.</p>
-      <p class="quiet">When a song you play is already on the disk, the file plays instead of the stream.</p>
+      <p>Download songs as FLAC, as good as the original recording. Turn on <b>Download in lossless</b> and Verza does the rest.</p>
+      <p>It finds the best copy shared on Soulseek and skips the fakes.</p>
+      <p>Every file is tagged and filed in your Music folder by artist and album, ready for any player.</p>
+      <p class="quiet">Already have the song? Verza plays your file instead of streaming it.</p>
     </div>
     <figure class="bleed">
       <img class="shot d" src="assets/next-downloaded-dark.webp" width="2560" height="1600" loading="lazy" alt="Library, downloaded: albums in a grid, sorted A to Z">
@@ -468,19 +425,19 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
   <div class="cols">
     <div>
       <h3>Home</h3>
-      <p class="quiet">Recently played, on repeat, favourites you'd forgotten, and mixes that start from an artist you've had on lately. Verza builds them on your own machine from your own plays. One mix follows the time of day.</p>
+      <p class="quiet">Recently played, on repeat, forgotten favourites and mixes based on what you love.</p>
     </div>
     <div>
       <h3>Discovery radio</h3>
-      <p class="quiet">Radio that stays in the genre you started from and plays only songs you haven't heard. It remembers the last 5,000 it offered, so it doesn't loop back to the same forty.</p>
+      <p class="quiet">New songs in the genre you love. Never ones you've already heard.</p>
     </div>
     <div>
       <h3>Your Sound</h3>
-      <p class="quiet">How much you listen, when, and to whom. It also names your genre, using MusicBrainz's curated genres, and builds a radio from it.</p>
+      <p class="quiet">See what, when and how much you listen, and get a radio of your genre.</p>
     </div>
     <div>
       <h3>Your account, if you want</h3>
-      <p class="quiet">Sign in to YouTube Music and your likes, playlists and Home come along. A like in Verza is a like on your account. Skip the sign-in and the rest still works.</p>
+      <p class="quiet">Sign in to bring your likes, playlists and Home. Or skip it, and everything else still works.</p>
     </div>
   </div>
 </section>
@@ -490,8 +447,8 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
   <h2>In your pocket</h2>
   <div class="split">
     <div class="text">
-      <p>The phone app came first, and the computer follows its design: the same glass, the same Now Playing, the same downloads into the same kind of folders. Its 3D covers move as you tilt the phone.</p>
-      <p>It plays in Android Auto and from the lock screen. Five home-screen widgets and a quick-settings tile control it. Share a YouTube link to it from any app and it plays the song.</p>
+      <p>The same Verza, on Android. 3D covers move as you tilt your phone.</p>
+      <p>Play in Android Auto and from your lock screen, with home-screen widgets and a quick-settings tile.</p>
       <div class="words" style="padding-top:20px"><a class="word accent" href="#get">Get it</a></div>
     </div>
     <div class="phones">
@@ -515,26 +472,26 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
   <div class="dateline">Also on the record</div>
   <h2>Everything else</h2>
   <ol class="tracks">
-    <li><span class="name">Equaliser</span><span class="what">Ten bands, presets and a bass control on the computer. The phone gets as many bands as it has, usually five, with the same presets.</span><span class="where">Both</span></li>
-    <li><span class="name">Fade between songs</span><span class="what">One song fades into the next, for as many seconds as you set.</span><span class="where">Computer</span></li>
-    <li><span class="name">Volume normalisation</span><span class="what">Every song at the same loudness, from the figure YouTube Music itself uses.</span><span class="where">Computer</span></li>
-    <li><span class="name">Output device</span><span class="what">Speakers, headphones or a DAC.</span><span class="where">Computer</span></li>
-    <li><span class="name">Sleep timer</span><span class="what">Stops after 15 minutes, an hour, or the end of the song, fading out if you like.</span><span class="where">Both</span></li>
-    <li><span class="name">Listen along</span><span class="what">A link that opens your queue, at your second, in a friend's Verza.</span><span class="where">Both</span></li>
-    <li><span class="name">Bring your playlists</span><span class="what">From a Spotify data export, or a JSON file from Apple Music, Deezer or TIDAL.</span><span class="where">Computer</span></li>
-    <li><span class="name">ListenBrainz</span><span class="what">Its weekly mixes on Home. Connect Spotify there and that listening counts too.</span><span class="where">Both</span></li>
-    <li><span class="name">Music you already have</span><span class="what">Files in your Music folder sit in the Library and play in the same queue.</span><span class="where">Both</span></li>
-    <li><span class="name">Lossless sources</span><span class="what">Point Verza at a FLAC server of your own and it streams from there when it can.</span><span class="where">Both</span></li>
-    <li><span class="name">Play a link</span><span class="what">Paste or share a YouTube link and the song plays.</span><span class="where">Both</span></li>
-    <li><span class="name">Open a Spotify link</span><span class="what">Paste a Spotify or Apple Music playlist, album or song, and it opens here as a playlist, with its cover. Like it and it stays.</span><span class="where">Computer</span></li>
-    <li><span class="name">Media keys and hotkeys</span><span class="what">Keyboard media keys, Windows' media overlay, and shortcuts that work in the background.</span><span class="where">Computer</span></li>
-    <li><span class="name">The tray</span><span class="what">Close the window and the music keeps going.</span><span class="where">Computer</span></li>
-    <li><span class="name">Android Auto</span><span class="what">Your library and queue on the car's screen.</span><span class="where">Phone</span></li>
-    <li><span class="name">Widgets and a tile</span><span class="what">Five widgets for the home screen and a play button in quick settings.</span><span class="where">Phone</span></li>
-    <li><span class="name">Skip silence</span><span class="what">Dead air at the start and end of a song is cut.</span><span class="where">Phone</span></li>
-    <li><span class="name">Your library as a file</span><span class="what">Export playlists, likes and history, and import them elsewhere. The sign-in is never in the file.</span><span class="where">Computer</span></li>
-    <li><span class="name">Updates itself</span><span class="what">Both apps fetch their own new versions from GitHub.</span><span class="where">Both</span></li>
-    <li><span class="name">Light and dark</span><span class="what">Pitch black at night, stone by day, following the system or not.</span><span class="where">Both</span></li>
+    <li><span class="name">Equaliser</span><span class="what">Shape the sound with bands and presets.</span><span class="where">Both</span></li>
+    <li><span class="name">Fade between songs</span><span class="what">Blend each song into the next.</span><span class="where">Computer</span></li>
+    <li><span class="name">Volume normalisation</span><span class="what">Every song at the same volume.</span><span class="where">Computer</span></li>
+    <li><span class="name">Output device</span><span class="what">Choose speakers, headphones or a DAC.</span><span class="where">Computer</span></li>
+    <li><span class="name">Sleep timer</span><span class="what">Stop the music after a set time, with a gentle fade.</span><span class="where">Both</span></li>
+    <li><span class="name">Listen along</span><span class="what">Share a link and a friend hears your queue, in sync.</span><span class="where">Both</span></li>
+    <li><span class="name">Bring your playlists</span><span class="what">Import from Spotify, Apple Music, Deezer or TIDAL.</span><span class="where">Computer</span></li>
+    <li><span class="name">ListenBrainz</span><span class="what">Your weekly ListenBrainz mixes on Home, Spotify listening included.</span><span class="where">Both</span></li>
+    <li><span class="name">Music you already have</span><span class="what">Your own files play right alongside everything else.</span><span class="where">Both</span></li>
+    <li><span class="name">Lossless sources</span><span class="what">Stream FLAC from your own music server.</span><span class="where">Both</span></li>
+    <li><span class="name">Play a link</span><span class="what">Paste or share a YouTube link to play it.</span><span class="where">Both</span></li>
+    <li><span class="name">Open a Spotify link</span><span class="what">Paste a Spotify or Apple Music link to open it as a playlist.</span><span class="where">Computer</span></li>
+    <li><span class="name">Media keys and hotkeys</span><span class="what">Control playback from your keyboard, even in the background.</span><span class="where">Computer</span></li>
+    <li><span class="name">The tray</span><span class="what">Close the window and keep listening.</span><span class="where">Computer</span></li>
+    <li><span class="name">Android Auto</span><span class="what">Your library and queue on your car's screen.</span><span class="where">Phone</span></li>
+    <li><span class="name">Widgets and a tile</span><span class="what">Control music from your home screen and quick settings.</span><span class="where">Phone</span></li>
+    <li><span class="name">Skip silence</span><span class="what">Skip the quiet parts at the start and end of songs.</span><span class="where">Phone</span></li>
+    <li><span class="name">Your library as a file</span><span class="what">Back up your playlists, likes and history.</span><span class="where">Computer</span></li>
+    <li><span class="name">Updates itself</span><span class="what">New versions install on their own.</span><span class="where">Both</span></li>
+    <li><span class="name">Light and dark</span><span class="what">Black at night, stone by day.</span><span class="where">Both</span></li>
   </ol>
 </section>
 
@@ -564,11 +521,11 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
   <div class="warn">
     <div>
       <h3>Windows will warn you</h3>
-      <p class="quiet">The installer isn't code-signed, because a certificate costs a few hundred dollars a year. SmartScreen says so for any installer it doesn't know. Choose <b>More info</b>, then <b>Run anyway</b>.</p>
+      <p class="quiet">The installer isn't code-signed yet, so Windows may warn you. Choose <b>More info</b>, then <b>Run anyway</b>.</p>
     </div>
     <div>
       <h3>So will Android</h3>
-      <p class="quiet">Verza isn't on Google Play, so Play Protect hasn't seen the file before and offers to scan it. Let it, then install. You also allow your browser to install apps, once.</p>
+      <p class="quiet">Verza isn't on Google Play, so Android asks first. Let Play Protect scan it, then install.</p>
     </div>
   </div>
 </section>
@@ -582,7 +539,7 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
     <a class="word small" href="https://github.com/SambuddhaRoy/Verza">Phone source</a>
     <a class="word small" href="https://github.com/SambuddhaRoy">Sambuddha Roy</a>
   </div>
-  <p class="note">Verza is one person's project, for personal use. It is not affiliated with, endorsed by, or sponsored by YouTube or Google. It ships no music and has no server of its own. Album covers in the pictures belong to their owners.</p>
+  <p class="note">Verza is an independent project for personal use. It isn't affiliated with YouTube or Google and has no servers of its own. Album art belongs to its owners.</p>
 </footer>
 
 <div class="dock glass" role="region" aria-label="This page, as a player">
@@ -681,18 +638,6 @@ html:not(.playing) .i-pause, html.playing .i-play { display: none; }
 
   // The clip is still with reduced motion asked for; its first frame stands in.
   if (reduced) document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
-
-  // The flick: a press on the word, or a drag across the drawing in the direction the song should go.
-  var scene = $('flickScene'), flickBtn = $('flickBtn'), downX = null;
-  function flick(there) {
-    if (scene.classList.contains('there') === there) return;
-    scene.classList.remove('go'); void scene.offsetWidth;
-    scene.classList.toggle('there', there); scene.classList.add('go', 'been');
-    flickBtn.textContent = there ? 'Flick it back' : 'Flick it over';
-  }
-  flickBtn.onclick = function () { flick(!scene.classList.contains('there')); };
-  scene.addEventListener('pointerdown', function (e) { downX = e.clientX; });
-  addEventListener('pointerup', function (e) { if (downX !== null && Math.abs(e.clientX - downX) > 30) flick(e.clientX > downX); downX = null; });
 
   // The newest versions and their files, straight from the releases. Without an answer the links
   // still open the releases page.

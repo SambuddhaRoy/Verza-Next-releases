@@ -4,8 +4,8 @@
 
 ### A music player for Windows and Linux
 
-YouTube Music without the ads, covers that move in 3D,<br/>
-downloads in lossless, and lyrics in time.
+All of YouTube Music. No ads.<br/>
+3D covers, lossless downloads and lyrics in time.
 
 <p>
   <a href="../../releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/SambuddhaRoy/Verza-Next-releases?style=for-the-badge&label=Download&color=d6246e" /></a>
@@ -27,8 +27,8 @@ downloads in lossless, and lyrics in time.
 
 </div>
 
-> **Not affiliated with YouTube or Google.** Verza is one person's project, for personal use. It plays
-> music through YouTube's own endpoints, bundles no music, ships no API keys, and has no server of its own.
+> **Not affiliated with YouTube or Google.** Verza is an independent project for personal use. It ships
+> no music and has no servers of its own.
 
 ---
 
@@ -44,24 +44,24 @@ Windows will probably show a blue *"Windows protected your PC"* screen, because 
 
 **Linux.** The release has a `.deb` and an AppImage. Signing in needs Edge, Chrome, Chromium or Brave installed.
 
-Then open Verza and either **sign in** to YouTube Music, so your likes, playlists and Home come with you, or **skip** it. Everything except your account's library works without signing in.
+Then open Verza. **Sign in** to bring your likes, playlists and Home, or **skip** it. Everything else works either way.
 
-Verza updates itself: it checks when it starts and every few hours while it's open.
+Verza keeps itself up to date.
 
 ---
 
 ## What it does
 
-- **Plays the whole YouTube Music catalogue**, full length, without ads, signed in or not.
-- **3D covers.** A cover with someone in front of a scene gets depth, worked out on your computer. Move the pointer over Now Playing and the scene slides behind them while they hold still. Windows only, for now.
-- **Opens Spotify and Apple Music links.** Paste a playlist, album or song and it opens as a playlist, with its cover. Like it and it stays in your Library.
-- **Downloads in lossless.** Turn it on and a download becomes a FLAC from Soulseek, the highest resolution on offer. Verza makes the account for you. Otherwise it saves M4A or MP3, filed by artist and album.
-- **Lyrics** that follow the song, line by line.
-- **Home made from what you play**: recently played, on repeat, forgotten favourites, and mixes built on your machine. **Discovery radio** finds artists you haven't heard.
-- **Your Sound** names your genre and plays it.
-- **Flick it over.** With Verza on your phone, flick toward your screen and the song carries on here, queue and all.
-- **The music you already have**: your Music folder sits in the Library and plays in the same queue.
-- A ten-band **equaliser**, fades between songs, volume normalisation, output device, sleep timer, media keys, the tray, and two themes: pitch black, and stone.
+- **No ads.** All of YouTube Music, full length, signed in or not.
+- **3D covers.** Move your pointer over Now Playing and the cover moves in 3D. Windows only for now.
+- **Lossless downloads.** Save songs as FLAC, as good as the original recording.
+- **Lyrics in time.** Follow along, line by line.
+- **Made for you.** Home, mixes and Discovery radio, built from what you play.
+- **Your Sound.** See what you listen to, and get a radio of your genre.
+- **Spotify and Apple Music links.** Paste one and it opens as a playlist.
+- **Flick it over.** Flick your phone toward your screen and the song moves here.
+- **Your own music.** Files in your Music folder play right alongside everything else.
+- **And more.** A ten-band equaliser, crossfade, sleep timer, media keys, and two themes: black and stone.
 
 ---
 
@@ -71,14 +71,14 @@ Verza updates itself: it checks when it starts and every few hours while it's op
 <summary><b>Is it safe? Why does Windows warn me?</b></summary>
 <br/>
 
-The installer isn't code-signed (the certificates cost hundreds a year), so SmartScreen warns about it. Choose **More info**, then **Run anyway**. Verza talks to no server of its own.
+The installer isn't code-signed yet, so Windows warns about it. Choose **More info**, then **Run anyway**. Verza has no servers of its own.
 </details>
 
 <details>
 <summary><b>Do I need a YouTube account?</b></summary>
 <br/>
 
-No. Playback, search, radio, lyrics and downloads all work signed out. Signing in adds your YouTube Music library, and a like in Verza becomes a like on your account.
+No. Playing, search, radio, lyrics and downloads all work without one. Sign in to add your YouTube Music library.
 </details>
 
 <details>
@@ -105,5 +105,5 @@ Not yet. Windows and Linux today.
 ---
 
 <div align="center">
-<sub><b>Verza</b>, a personal project shared for personal use. Not affiliated with YouTube or Google.</sub>
+<sub><b>Verza</b>, an independent project for personal use. Not affiliated with YouTube or Google.</sub>
 </div>
